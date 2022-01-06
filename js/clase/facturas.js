@@ -2,7 +2,7 @@
     Clase factura, información sobre una compra realizada por cierto user.
 */
 
-class factura{
+export class factura{
 
     constructor(user, producto, monto, metPago, fecha){
         this.user       = user;     //objeto tipo user

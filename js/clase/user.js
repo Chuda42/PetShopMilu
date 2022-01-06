@@ -2,7 +2,6 @@
     clase usuario, tiene la infrmación sobre un usuario.
 */
 
-
 export class user{
     constructor(userName, pass, id){
         this.name      = userName; //string
