@@ -47,9 +47,11 @@ export class user{
         this.billetera = this.billetera + monto; 
     }
 
-    /*resta a la cantidad actual de la billetara monto*/
+    /*resta monto a la cantidad actual de la billetara, si el resultado es menor a 0 manda una
+    alerta de saldo insuficiente*/
     restarSaldo(monto){
-        this.billetera = this.billetera - monto;
+        let res = this.billetera - monto;
+        (res < 0)? alert(`Saldo disponible ${this.billetera}`) : this.billetera = res;
     }
 
     /*actualizar saldo de billetera en monto*/
