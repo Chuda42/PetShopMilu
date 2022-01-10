@@ -1,0 +1,40 @@
+/* Reseteo los margenes */
+* {
+    box-sizing: border-box; /* para que te tome el tamaño de la pantalla y no mas */
+    margin : 0;
+    padding :0;
+}
+
+/* Body */
+body {
+    background-color: white;
+}
+
+/* Las listas */
+ul {
+    list-style: none;
+}
+
+/* Contenedor de todo */
+.contenedor {
+    width: 90%;
+    margin: auto;
+}
+
+/* Header */
+.cabezera {
+    width: 100%;
+    height: 200px;
+    background-color: orange;
+    display: flex;
+    align-items: center; /* mete en el medio vertical */
+    justify-content: center; /* mete en el medio horizontal */
+}
+
+.cabezera-nombrePagina {
+    width: 60%;
+    height: 50%;
+    background-color: red;
+}
+
+/* Barra de navegación */
