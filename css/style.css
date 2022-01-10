@@ -8,12 +8,25 @@
 /* Body */
 body {
     background-color: white;
+    font-family: 'Amatic SC', cursive;
+    color: black;
 }
 
 /* Las listas */
 ul {
     list-style: none;
 }
+
+a{
+    text-decoration: none;
+    color: black;
+    font-size: 25px;
+}
+
+p{
+    font-size:50px
+}
+
 
 /* Contenedor de todo */
 .contenedor {
@@ -38,3 +51,50 @@ ul {
 }
 
 /* Barra de navegación */
+.barraNav{
+    width: 100%;
+    background-color: #ffcf8c;
+    border: 1px solid #fff;
+    border-radius: 0px 0px 10px 10px;
+    
+}
+
+.barraNav-main{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.bajar{
+    position: fixed;
+    width: 90%;
+    transform: translateY(-200px);
+    transition: 1ms;
+    background-color:  #f5950e;
+    border: 0px solid #fff;
+
+}
+
+.bajar .barraNav-main i{
+    font-size: 40px;
+    margin-left: 20px;
+    color: #ffcf8c;
+}
+
+.barraNav-main i{
+    font-size: 40px;
+    margin-left: 20px;
+    color: #f5950e;
+}
+
+.barraNav-main ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.barraNav-main ul li{
+    margin: 20px;
+}
+
