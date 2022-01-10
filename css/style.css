@@ -66,6 +66,7 @@ p{
     
 }
 
+/* Cuando baja el scroll los 200px del header */
 .bajar{
     position: fixed;
     width: 90%;
