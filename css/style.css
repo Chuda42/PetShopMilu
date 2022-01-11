@@ -159,6 +159,25 @@ p{
     color: white;
 }
 
+.compra-oferta {
+    display: flex;
+    justify-content: center;
+}
+
+.contenido-inicio a {
+    font-size: 20px;
+    color:white;
+    border: 1px solid white;
+    border-radius: 7px 7px 7px 7px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.compra-oferta a:hover{
+    background-color: white;
+    color: black;
+}
+
 .contenido-inicio img{
     height: 400px;
     margin-right: 200px;
