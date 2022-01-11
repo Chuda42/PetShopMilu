@@ -7,7 +7,7 @@
 
 /* Body */
 body {
-    background-color: white;
+    background-color: hsl(35, 100%, 64%, 0.3);
     font-family: 'Amatic SC', cursive;
     color: black;
 }
@@ -32,6 +32,7 @@ p{
 .contenedor {
     width: 90%;
     margin: auto;
+    background-color: hsl(35, 100%, 77%, 0.3);
 }
 
 /* Header */
@@ -83,10 +84,23 @@ p{
     color: #ffcf8c;
 }
 
+.bajar .barraNav-main a i:hover{
+    color: hsl(35, 100%, 77%, 0.5)
+}
+
+.bajar .barraNav-main ul li a:hover{
+    color: #ffcf8c;
+
+}
+
 .barraNav-main i{
     font-size: 40px;
     margin-left: 20px;
     color: #f5950e;
+}
+
+.barraNav-main a i:hover{
+    color:hsl(35, 92%, 51%, 0.5)
 }
 
 .barraNav-main ul {
@@ -97,5 +111,17 @@ p{
 
 .barraNav-main ul li{
     margin: 20px;
+    margin-right: 20px;
+    border-left: 1px solid black;
+}
+
+.barraNav-main ul li a:hover{
+    color: #f5950e;
+}
+
+.barraNav-main ul li i{
+    margin-left:10px;
+    margin-right: 10px;
+    font-size: 25px;
 }
 
