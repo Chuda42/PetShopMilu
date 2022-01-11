@@ -133,11 +133,11 @@ p{
     align-items: center;
     width: 100%;
     height: 400px;
-    background-color:black
+    background-color: #965695;
 }
 
 .contenido-inicio-texto{
-    margin: 30px
+    margin: 200px
 }
 
 .contenido-inicio h3{
@@ -149,4 +149,9 @@ p{
 .contenido-inicio p {
     font-size: 40px;
     color: white;
+}
+
+.contenido-inicio img{
+    height: 400px;
+    margin-right: 200px;
 }
