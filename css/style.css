@@ -125,3 +125,28 @@ p{
     font-size: 25px;
 }
 
+/* Contenido de inicio */
+
+.contenido-inicio{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 400px;
+    background-color:black
+}
+
+.contenido-inicio-texto{
+    margin: 30px
+}
+
+.contenido-inicio h3{
+    font-size: 4rem;
+    margin-left: 150px;
+    color: white;
+}
+
+.contenido-inicio p {
+    font-size: 40px;
+    color: white;
+}
