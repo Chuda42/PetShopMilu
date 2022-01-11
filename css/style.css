@@ -135,6 +135,7 @@ p{
 
 /* Contenido de inicio */
 
+/* Oferta 1 */
 .contenido-inicio-fondo {
     background-image: url(../media/img/mily-recortada.png);
     background-repeat: no-repeat;
@@ -187,6 +188,53 @@ p{
 }
 
 .contenido-inicio img{
+    height: 400px;
+    margin-right: 200px;
+}
+
+/* Oferta 2 */
+.contenido-inicio-fondo-2 {
+    background-image: url(../media/img/mily-recortada.png);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-position-y: top;
+}
+
+.contenido-inicio-2{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 400px;
+    background-color: hsl(301, 27%, 46%, 0.5);
+    background: linear-gradient(to left, rgba(149, 86, 148, 0.8), rgba(149, 86, 148, 0.3));
+}
+
+.contenido-inicio-texto-2{
+    margin: 200px
+}
+
+.contenido-inicio-2 h3{
+    font-size: 4rem;
+    margin-left: 150px;
+    color: white;
+}
+
+.contenido-inicio-2 p {
+    font-size: 40px;
+    color: white;
+}
+
+.contenido-inicio-2 a {
+    font-size: 20px;
+    color:white;
+    border: 1px solid white;
+    border-radius: 7px 7px 7px 7px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.contenido-inicio-2 img{
     height: 400px;
     margin-right: 200px;
 }
