@@ -88,6 +88,10 @@ p{
     color: hsl(35, 100%, 77%, 0.5)
 }
 
+.bajar .barraNav-main ul li a{
+    font-size: 30px;
+}
+
 .bajar .barraNav-main ul li a:hover{
     color: #ffcf8c;
 
@@ -115,6 +119,10 @@ p{
     border-left: 1px solid black;
 }
 
+.barraNav-main ul li a{
+    font-size: 30px;
+}
+
 .barraNav-main ul li a:hover{
     color: #f5950e;
 }
@@ -122,7 +130,7 @@ p{
 .barraNav-main ul li i{
     margin-left:10px;
     margin-right: 10px;
-    font-size: 25px;
+    font-size: 30px;
 }
 
 /* Contenido de inicio */
