@@ -1,0 +1,49 @@
+/* Ajustar cajas */
+
+.cajas{
+    display: grid;
+    grid-template-columns: 25% 25% 25%;
+    column-gap: 80px;
+    justify-content: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.cajas p{
+    font-size: 20px;
+}
+
+/* Caja 1 */
+.caja1{
+    padding: 20px;
+    background-color: hsl(35, 92%, 51%, 0.5);
+    border-radius: 15px 15px 15px 15px;
+}
+
+.caja1 img{
+    border-radius: 15px 15px 15px 15px;
+}
+
+/* Caja 2 */
+.caja2{
+    padding: 20px;
+    background-color: hsl(35, 92%, 51%, 0.5);
+    border-radius: 15px 15px 15px 15px;
+}
+
+.caja2 img{
+    border-radius: 15px 15px 15px 15px;
+}
+
+/* Caja 3 */
+.caja3{
+    padding: 20px;
+    background-color: hsl(35, 92%, 51%, 0.5);
+    border-radius: 15px 15px 15px 15px;
+}
+
+.caja3 img{
+    width: 300px;
+    border-radius: 15px 15px 15px 15px;
+
+}
