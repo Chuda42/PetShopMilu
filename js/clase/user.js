@@ -13,6 +13,16 @@ export class user{
 
     }
 
+    /* Dado un objeto con las mismas propiedades que un user pero que no es un user contruye uno */
+    copiarInstancia(user){
+        this.name      = user.name;
+        this.pass      = user.pass;
+        this.id        = user.id;
+        this.billetera =  user.billetera;
+        this.historial = user.historial;
+        this.active    = user.active;
+    }
+
 
     /*ESTADO DE ACTIVIDAD*/
     //cambia this.active a true
@@ -61,6 +71,10 @@ export class user{
         this.pass = pass;
     }
 
+    setId(id){
+        this.id = id;
+    }
+
     //a this.billetera (saldo) le suma monto 
     sumarSaldo(monto){
         this.billetera = this.billetera + monto; 
@@ -80,6 +94,18 @@ export class user{
     //agrega un nuevo objeto factura a this.historial
     pushFactura(factura){
         this.historial.push(factura);
+    }
+
+    /* Funcion hash */
+    // Funcion de hash para un string nombre 
+    hash(){
+        const BASE = 10000;
+        let resultado = 1;
+        for (let i = 0; i < this.name.length; i++) {
+            resultado = resultado * this.name.charCodeAt(i) * (i+1);
+        }
+        resultado = resultado % BASE;
+        return resultado;
     }
 
     /* Puedo agregar realizarComprar()
