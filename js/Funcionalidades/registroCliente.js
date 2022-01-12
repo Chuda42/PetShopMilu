@@ -1,13 +1,14 @@
+/* Importaciones */
 import {user} from  '../clase/user.js';
 
 
-/* dada una lista y un user, guarda el user en el lugar resutado de la función de hash de user.name */
+/* dada una lista y un user, guarda el user en el lugar resutado del metodo hash de user*/
 export const guardarEnRegistroUser = (user, listaUser) =>{
     listaUser[user.hash()] = user;  
 }
 
 /* Guardo en el storage */
-//clave tipo string, listaUser lista de tipo user
+//listaUser lista de tipo user
 export const setRegistroUsers = (listaUser) =>{
     localStorage.setItem("RegistroUser", JSON.stringify(listaUser));
     console.log("Guardada la lista con la clave `RegistroUser`, en el storage ");
@@ -33,10 +34,20 @@ export const registrarNewUser = ()=>{
 
     let resultado;
     resultado = getRegistroUsers();
-    guardarEnRegistroUser(newUser, resultado);
-    setRegistroUsers(resultado);
-
-    alert("Registrado con exito")
+    
+    //Busco un lugar en el registro, si no esta disponible el lugar del hash le sumo 1 hasta el tope que es 10001
+    while (resultado[id] != undefined && id < 10001) {
+        id++;
+        newUser.setId(id);
+    }
+    //Si rompe porque el id supera el maximo esperado manda alerta si no se guarda el user.
+    if(id < 10001){
+        guardarEnRegistroUser(newUser, resultado);
+        setRegistroUsers(resultado);
+        alert("Registrado con exito")
+    }else 
+        alert("No se encontro lugar en el registro para el usuario");
+    
 }
 
 /* Devuelve true si el usuario esta registrado en el registro del storage */
@@ -57,5 +68,19 @@ export const FHash = (nombre) =>{
     }
     resultado = resultado % BASE;
     return resultado;
+}
+
+/* Dado nombre, retorna el obejeto correpondiente en el registro, y lo retorna en tipo user */
+//nombre tipo string, resultado tipo user
+export const getUserFromStorage = (nombre) => {
+    let nombreHash = FHash(nombre);
+    let resultado = new user(); 
+    resultado.copiarInstancia(getRegistroUsers()[nombreHash]);
+    return resultado;
+}
+
+/* Elimina el registro de usuarios */
+export const deleteRegistro = () => {
+    localStorage.removeItem("RegistroUser")
 }
 

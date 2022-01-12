@@ -43,6 +43,11 @@ export class user{
         return this.name;
     }
 
+    //retorna this.pass
+    getPass() {
+        return this.pass;
+    }
+
     //retorna el id del cliente
     getId() {
         return this.id;
