@@ -64,4 +64,8 @@ while(!salir){
     else if(comando == "Invitado"){
         salir = true;
     }//invitado
+
+    else if(comando == "delete"){
+        localStorage.removeItem("RegistroUser");
+    }
 }
