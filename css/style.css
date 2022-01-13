@@ -73,7 +73,7 @@ p{
     width: 90%;
     transform: translateY(-200px);
     transition: 1ms;
-    background-color:  #f5950e;
+    background-color:  hsl(35, 92%, 51%, 0.9);
     border: 0px solid #fff;
 
 }

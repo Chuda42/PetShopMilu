@@ -21,6 +21,7 @@
 }
 
 .caja1 img{
+    width: 100%;
     border-radius: 15px 15px 15px 15px;
 }
 
@@ -32,6 +33,7 @@
 }
 
 .caja2 img{
+    width: 100%;
     border-radius: 15px 15px 15px 15px;
 }
 
@@ -43,7 +45,7 @@
 }
 
 .caja3 img{
-    width: 300px;
+    width: 100%;
     border-radius: 15px 15px 15px 15px;
 
 }
