@@ -2,12 +2,13 @@
 import {user} from  '../clase/user.js';
 
 
-/* dada una lista y un user, guarda el user en el lugar resutado del metodo hash de user*/
+/* dada una lista y un user, guarda el user en el inidice de la lista resutado del metodo hash de user*/
 export const guardarEnRegistroUser = (user, listaUser) =>{
     listaUser[user.hash()] = user;  
 }
 
 /* Guardo en el storage */
+//Se guarrda la listaUser en el storage con la clave "RegsitroUser", antes se pasa a JSON
 //listaUser lista de tipo user
 export const setRegistroUsers = (listaUser) =>{
     localStorage.setItem("RegistroUser", JSON.stringify(listaUser));
@@ -15,7 +16,7 @@ export const setRegistroUsers = (listaUser) =>{
 }
 
 /* Obtengo el registro de users */
-//Devuelve lo guardado en el stroge con la clave "RegistroUser", en la varible lsitaUser
+//Retorna lo guardado en el stroge con la clave "RegistroUser"
 export const getRegistroUsers = ()=>{
     let listaUser = localStorage.getItem("RegistroUser");
     listaUser = JSON.parse(listaUser);
@@ -23,7 +24,7 @@ export const getRegistroUsers = ()=>{
 }
 
 /* Registra un user en el registro que esta en el storage */
-//Precondición: el usuario no esta registrado
+//Si el usuario ya esta registrado manda una alert
 export const registrarNewUser = ()=>{
     let nombre = prompt("Escriba su nombre por favor");
     let pass = prompt("Escriba su contraseña por favor");
@@ -54,7 +55,7 @@ export const registrarNewUser = ()=>{
     
 }
 
-/* Devuelve true si el usuario esta registrado en el registro del storage */
+/* Devuelve true si el user esta registrado en el registro del storage */
 export const estaUserRegistrado = (user) =>{
     let hash = user.hash();
     let registro;
@@ -63,7 +64,7 @@ export const estaUserRegistrado = (user) =>{
     return registro[hash] != undefined && registro[hash].name == user.getName();
 }
 
-/* Funcion de hash dado un nombre de user te devuelve la posicion en el registro */
+/* Funcion de hash dado un nombre de user te devuelve la posicion en el registro o tambien el id */
 export const FHash = (nombre) =>{
     const BASE = 10000;
     let resultado = 1;

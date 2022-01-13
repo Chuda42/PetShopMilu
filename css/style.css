@@ -52,8 +52,15 @@ p{
     background-repeat : no-repeat;
     background-size: cover;
     background-position: center;
-    
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cabezera-nombrePagina h1{
+    transform: translateY(55px);
+    font-size: 80px;
+    font-weight: 700;
 }
 
 /* Barra de navegación */

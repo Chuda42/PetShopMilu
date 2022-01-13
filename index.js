@@ -28,13 +28,13 @@ while(!salir){
 	-> login: si ya tiene usuario y quiere ingresar con él
     ->Invitado: ingresa como invitado salta los comandos y se ingresa a la pagina sin logueo`)
 
-    /* Registrarse Precondición el user no esta registrado */
+    /* Registrarse */
     if(comando == "Registrarse"){
         registrarNewUser();
         registroUser = getRegistroUsers();
     }
 
-    /* Login, Precondición, el ususrio existe */
+    /* Login */
     else if(comando == "login"){
         flag = 0;
         
@@ -56,7 +56,7 @@ while(!salir){
                         alert(`El usuario se llama ${nombre.getName()}, su saldo acual en la billetera es ${nombre.getSaldo()}, y su id es ${nombre.getId()}`); 
                     }
                 }//while
-            }else{ //si no hacerto la contra 3 veces
+            }else{ //si no acerto la contra 3 veces
                 alert("Desmasiados intentos para la contraseña, intente en un rato")
             }//else
         }else
