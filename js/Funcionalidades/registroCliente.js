@@ -34,19 +34,23 @@ export const registrarNewUser = ()=>{
 
     let resultado;
     resultado = getRegistroUsers();
-    
-    //Busco un lugar en el registro, si no esta disponible el lugar del hash le sumo 1 hasta el tope que es 10001
-    while (resultado[id] != undefined && id < 10001) {
-        id++;
-        newUser.setId(id);
+
+    if(estaUserRegistrado(newUser)){
+        alert("Ya hay un usuario registrado con ese nombre");
+    }else{
+        //Busco un lugar en el registro, si no esta disponible el lugar del hash le sumo 1 hasta el tope que es 10001
+        while (resultado[id] != undefined && id < 10001) {
+            id++;
+            newUser.setId(id);
+        }
+        //Si rompe porque el id supera el maximo esperado manda alerta si no se guarda el user.
+        if(id < 10001){
+            guardarEnRegistroUser(newUser, resultado);
+            setRegistroUsers(resultado);
+            alert("Registrado con exito")
+        }else 
+            alert("No se encontro lugar en el registro para el usuario");
     }
-    //Si rompe porque el id supera el maximo esperado manda alerta si no se guarda el user.
-    if(id < 10001){
-        guardarEnRegistroUser(newUser, resultado);
-        setRegistroUsers(resultado);
-        alert("Registrado con exito")
-    }else 
-        alert("No se encontro lugar en el registro para el usuario");
     
 }
 
@@ -54,9 +58,9 @@ export const registrarNewUser = ()=>{
 export const estaUserRegistrado = (user) =>{
     let hash = user.hash();
     let registro;
-    getRegistroUsers(registro);
+    registro = getRegistroUsers();
 
-    return registro[hash] != undefined;
+    return registro[hash] != undefined && registro[hash].name == user.getName();
 }
 
 /* Funcion de hash dado un nombre de user te devuelve la posicion en el registro */
