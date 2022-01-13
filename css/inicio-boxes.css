@@ -1,3 +1,12 @@
+/* TITULO ANTES DE LAS CAJAS */
+.Titulo-Boxes{
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    margin-top: 65px;
+}
+
+
 /* Ajustar cajas */
 
 .cajas{
@@ -5,7 +14,7 @@
     grid-template-columns: 25% 25% 25%;
     column-gap: 80px;
     justify-content: center;
-    margin-top: 100px;
+    margin-top: 50px;
     margin-bottom: 100px;
 }
 
@@ -25,6 +34,17 @@
     border-radius: 15px 15px 15px 15px;
 }
 
+.caja1 h3{
+    display: flex;
+    justify-content: center;
+    font-size: 40px
+}
+
+.caja1 p{
+    font-size: 27px;
+    font-weight: 700;
+}
+
 /* Caja 2 */
 .caja2{
     padding: 20px;
@@ -37,6 +57,18 @@
     border-radius: 15px 15px 15px 15px;
 }
 
+.caja2 h3{
+    display: flex;
+    justify-content: center;
+    font-size: 40px
+}
+
+.caja2 p{
+    font-size: 27px;
+    font-weight: 700;
+}
+
+
 /* Caja 3 */
 .caja3{
     padding: 20px;
@@ -48,4 +80,15 @@
     width: 100%;
     border-radius: 15px 15px 15px 15px;
 
+}
+
+.caja3 h3{
+    display: flex;
+    justify-content: center;
+    font-size: 40px
+}
+
+.caja3 p{
+    font-size: 27px;
+    font-weight: 700;
 }

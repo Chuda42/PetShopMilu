@@ -38,17 +38,22 @@ p{
 /* Header */
 .cabezera {
     width: 100%;
-    height: 200px;
-    background-color: orange;
+    height: 300px;
+    background-color: hsl(35, 92%, 51%, 0.8);
     display: flex;
     align-items: center; /* mete en el medio vertical */
     justify-content: center; /* mete en el medio horizontal */
 }
 
 .cabezera-nombrePagina {
-    width: 60%;
-    height: 50%;
-    background-color: red;
+    width: 80%;
+    height: 100%;
+    background-image: url(../media/img/Foto-Portada.png);
+    background-repeat : no-repeat;
+    background-size: cover;
+    background-position: center;
+    
+    
 }
 
 /* Barra de navegación */
@@ -71,7 +76,7 @@ p{
 .bajar{
     position: fixed;
     width: 90%;
-    transform: translateY(-200px);
+    transform: translateY(-300px);
     transition: 1ms;
     background-color:  hsl(35, 92%, 51%, 0.9);
     border: 0px solid #fff;
