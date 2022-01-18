@@ -3,13 +3,14 @@
 */
 
 export class user{
-    constructor(userName, pass, id){
-        this.name      = userName; //string
-        this.pass      = pass;     //string  
-        this.id        = id;       //int
-        this.billetera = 0;        //int, saldo de la billetera   
-        this.historial = [];       //Lista de tipo factura
-        this.active    = false;    //indica si el usuario esta logeado (booleano)
+    constructor(userName, pass, email, id){
+        this.name      = userName;  //string
+        this.pass      = pass;      //string
+        this.email     = email;     //string
+        this.id        = id;        //int - int
+        this.billetera = 0;         //int, saldo de la billetera   
+        this.historial = [];        //Lista de tipo factura
+        this.active    = false;     //indica si el usuario esta logeado (booleano)
 
     }
 
@@ -17,6 +18,7 @@ export class user{
     copiarInstancia(user){
         this.name      = user.name;
         this.pass      = user.pass;
+        this.email     = user.email;
         this.id        = user.id;
         this.billetera =  user.billetera;
         this.historial = user.historial;
@@ -48,6 +50,11 @@ export class user{
         return this.pass;
     }
 
+    //retonra this.email
+    getEmail(){
+        return this.email;
+    }
+
     //retorna el id del cliente
     getId() {
         return this.id;
@@ -76,6 +83,12 @@ export class user{
         this.pass = pass;
     }
 
+    //cambia this.email
+    setEmail(email){
+        this.email = email;        
+    }
+
+    //cambia this.id por id
     setId(id){
         this.id = id;
     }
@@ -106,15 +119,13 @@ export class user{
     hash(){
         const BASE = 10000;
         let resultado = 1;
-        for (let i = 0; i < this.name.length; i++) {
-            resultado = resultado * this.name.charCodeAt(i) * (i+1);
+        for (let i = 0; i < this.email.length; i++) {
+            resultado = resultado * this.email.charCodeAt(i) * (i+1);
         }
         resultado = resultado % BASE;
         return resultado;
     }
 
-    /* Puedo agregar realizarComprar()
-    NO LA TENGO BIEN CLARA TODAVIA */
 }//class
 
 

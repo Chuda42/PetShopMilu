@@ -1,0 +1,202 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: hsl(35, 100%, 64%, 0.3);
+    font-family: 'Amatic SC', cursive;
+    color: black;
+    display: flex;
+    justify-content: center;
+}
+
+ul{
+    list-style: none;
+}
+
+li{
+    margin: 20px;
+}
+
+/* Login */
+.contenedor-login{
+    background-color: #f5950fcc;
+    width: 650px;
+    height: 500px;
+    margin-top: 70px;
+    border-radius: 50px 50px 50px 50px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor-login ul li h3{
+    font-size: 25px;
+}
+
+.contenedor-login ul li input{
+    height: 40px;
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid black;
+    border-radius: 15px 15px 15px 15px;
+    background-color: #ffd08fe7;
+}
+
+.contenedor-login-overlay{
+    width: 100%;
+    height: 100%;
+    padding:12%;
+    background-image: url(../media/img/pug-animado.png);
+    background-repeat: no-repeat;
+    background-position: right center;
+}
+
+.contenedor-login-boton{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    padding-left: 70px;
+    
+}
+
+.contenedor-login-boton h3:hover{
+    opacity: 0.8;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+.contenedor-login-boton h3{
+    border: 1px solid black;
+    border-radius: 20px 20px 20px 20px;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 25px;
+    background-color:#ffd08fe7;
+}
+
+.contenedor-login-overlay h4{
+    margin-top: 10px;
+    margin-left: 30px;
+    font-size: 20px;
+}
+
+/* Registro */
+.contenedor-register{
+    background-color: #f5950fcc;
+    width: 650px;
+    height: 600px;
+    margin-top: 70px;
+    border-radius: 50px 50px 50px 50px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor-register h4{
+    margin-top: 10px;
+    margin-left: 30px;
+    font-size: 20px;
+}
+
+.contenedor-register ul li h3{
+    font-size: 25px;
+}
+
+.contenedor-register ul li input{
+    height: 40px;
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid black;
+    border-radius: 15px 15px 15px 15px;
+    background-color: #ffd08fe7;
+}
+
+.contenedor-register-overlay{
+    width: 100%;
+    height: 100%;
+    padding:12%;
+    padding-top: 7%;
+    background-image: url(../media/img/pug-animado.png);
+    background-repeat: no-repeat;
+    background-position: right center;
+
+}
+
+.contenedor-register-boton{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    padding-left: 60px;
+    
+}
+
+.contenedor-register-boton h3:hover{
+    opacity: 0.8;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+.contenedor-register-boton h3{
+    border: 1px solid black;
+    border-radius: 20px 20px 20px 20px;
+    padding: 10px;
+    font-size: 25px;
+    background-color:#ffd08fe7;
+}
+
+/* Mensaje de correcto/incorrecto */
+.post-registro{
+    background-color: #f5950fcc;
+    width: 650px;
+    height: 600px;
+    margin-top: 70px;
+    border-radius: 50px 50px 50px 50px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.post-registro a{
+    text-decoration: none;
+    color:black;
+}
+
+.post-registro a:hover{
+    opacity: 0.8;
+}
+
+.registroOk-mensaje{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.registroOk-boton{
+    border: 1px solid black;
+    border-radius: 20px 20px 20px 20px;
+    padding: 10px;
+    font-size: 25px;
+    background-color:#ffd08fe7;
+}
+
+.post-registro h2{
+    margin: 20px;
+    font-size: 40px;
+}
+
+.post-registro i {
+    font-size: 40px; 
+}
+
+#iconTick{
+    color: rgb(6, 190, 6);
+}
+
+#iconCross {
+    color: rgb(216, 5, 5);
+}
