@@ -17,6 +17,10 @@ export class producto{
         return this.model;
     }
 
+    getImg(){
+        return this.img;
+    }
+
     getPrice(){
         return this.price;
     }
