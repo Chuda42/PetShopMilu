@@ -1,0 +1,45 @@
+Modulo login.js:
+	-> Descripción: este controla el registro y login de los usuarios. Utiliza el STORAGE para guardar el registro de los clientes que se implementa como una tabla de hash cuya función se aplica al email del usuario y el resultado se setea como el id del mismo. Al usuario logueado lo guarda tambien en STORAGE.
+
+->Funciones (16):
+Generales:
++FHash(string):int ->Función de hash que se utiliza en el email de los usuarios para guardar el lugar donde se guarda en el registro.
+
++setClass(string, objetct):void ->Le setea una clase a un objeto.
+
+login:
+
++ initUserIn():void ->Crea en el localStorage la varible con la clave "userIN" y la inizializa en 0 (indicador que no hay user logueado".
+
++ hayUserIn():bool ->Retorna true si en el localStorage hay algo que no sea 0.
+
++ getUserIn():User/int ->Retorna el usuario guardado en el STORGE, lo devuelve de tipo user; si !hayUserIn() retorna 0.
+
++ setUserIn(user):void ->Setea el user en el localStorage con key "userIN".
+
++ login():void ->Busca en registro si hay un usuario registrado hace setUserIn(), muestra mensajes de confirmación.
+
++ loginOk(string):void ->Muestra mensaje de confirmación de si el usuario se logueo.
+
+register:
+
++setRegistroUsers([user]):void ->Guarda en el localStorage con la clave "RegistroUser", la lista, antes la pasa a formato json.
+
++initRegistroUser():void ->Inicia el registro user con una lista vacia si no hay registro inicializado.
+
++getRegistroUsers():void ->Retorna el registro guardado en el localStorage con la clave "RegistroUser"
+
++guardarEnRegistroUser(user, [[user]]):void ->Guarda el user en la posición correspondiente a FHash(user.email) en la lista, si esta vacia la posición la inicializa con una lista de user 	que solo tiene a user, si no esta vacia hace push a la lista con el nuevo user, finalmente le asigna el id correcto al user, el id es "FHash(user.email)-Posicion de la lista". La 	lista es una tabla de hash por lo tanto es una lista de lista de user.
+
++estaUserRegistrado(string):bool ->Toma el email del user y busca si hay en el registro un user con el mismo mail en caso de que si retoran true si no retorna false.
+
++registrarNewUser():void ->Toma los datos del imput del form de registro, registra al user en el registro que esta en el localStorage, manda mensajes de confirmación con las funciones siguientes.
+
++registroOK(string, string):void -> Mensaje de registrado Correctamente o si ya hay uno registrado. Se le pasa un string con el mensaje y otro que indique el icono que usa.
+Usuario ok: "Usuario registrado con exito" "fas fa-check-circle", Usuario ya existe: "Ya existe un usuario registrado con ese email" "fas fa-times-circle".
+
++registroBack(string):void ->Pone boton para volver del registro si la key(string) es "login" vuelve al login, si es "registre" Vuelve al registro
+
++getUserFromStorage(string):user ->Con el email del usuario busca si hay un usuario con ese mail en el registro y lo retorna de tipo user.
+
++deleteRegistro():void ->Elimina el registro de users.
