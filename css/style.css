@@ -250,3 +250,8 @@ p{
     height: 300px;
     margin-left: 200px;
 }
+
+/* Cambia en la barra de navegación según el html donde estoy */
+.htmlIn a{
+    color: #f5950e;
+}

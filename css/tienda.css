@@ -1,0 +1,19 @@
+.store-container{
+    width: 100%;
+}
+
+.store-filter-list{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 10%;
+}
+
+.store-filter-list ul{
+    list-style: none;
+}
+
+.store-filter-list li{
+    text-align: center;
+    font-size: 20px;
+}
