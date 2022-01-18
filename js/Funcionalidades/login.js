@@ -194,7 +194,7 @@ export const registroBack = (key) => {
     h3.textContent = "Volver";
     newDiv.appendChild(h3);
 
-    (key == "login")? a.href = "index.html": a.href = "register.html"
+    (key == "login")? a.href = "login.html": a.href = "register.html"
 }
 
 export const getUserFromStorage = (email) => {
