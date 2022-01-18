@@ -17,7 +17,7 @@ Clase producto (producto.js):
 
 ->METODOS:
 
-+constructor(string, string, float, int):producto ->Asigna el name, model, price, id respectivamente el descuento lo inicializa en 0.
++constructor(string, string, string, float, int):producto ->Asigna el name, model, price, id respectivamente el descuento lo inicializa en 0.
 
 Getters:
 +getName():string ->Retorna el nombre del producto.
@@ -45,7 +45,7 @@ Setters:
 
 +setDescuento(int):void ->Setea int como el descuento del producto es decir this.descuento.
 
-+update(stirng, string, float, int, int):void ->Actualiza todos los atributos de un producto por los que se ingresan como parametro.
++update(stirng, string, string, float, int, int):void ->Actualiza todos los atributos de un producto por los que se ingresan como parametro.
 
 Comparaci�n:
 +igualName(string):bool ->Retorna true si el nombre del producto es el mismo que el string parametro.

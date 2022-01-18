@@ -43,6 +43,10 @@ export class producto{
         this.model = model;
     }
 
+    setImg(img){
+        this.img = img;
+    }
+
     setPrice(price){
         this.price = price;
     }
@@ -55,9 +59,10 @@ export class producto{
         this.descuento = desc;
     }
 
-    udate(name, model, price, id ,desc){
+    udate(name, model, img, price, id ,desc){
         this.name == name;
         this.model = model;
+        this.img = img;
         this.price = price;
         this.id = id;
         this.descuento = desc;
@@ -73,6 +78,10 @@ export class producto{
         return this.model == model;
     }
 
+    igualImg(img){
+        return this.img == img;
+    }
+
     igualPrice(price){
         return this.price == price;
     }
@@ -86,6 +95,6 @@ export class producto{
     }
 
     igualProducto(producto){  //producto de tipo producto
-        return (this.igualName(producto.getName()) && (this.igualModel(producto.getModel())) && (this.igualPrice(producto.getPrice())) && (this.igualId(producto.getId())));
+        return (this.igualName(producto.getName()) && (this.igualModel(producto.getModel()))&& (this.igualImg(producto.getImg())) && (this.igualPrice(producto.getPrice())) && (this.igualId(producto.getId())));
     }
 }//class
