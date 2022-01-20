@@ -16,6 +16,35 @@ export const initCarritoSTORAGE = () =>{
     localStorage.setItem('carrito', JSON.stringify(cart));
 }
 
+/* Retorna el objeto tipo carrito con la información guardada en el storage con la clave "carrito" */
+export const getCarrito = ()=>{
+    let carritoJSON = JSON.parse(localStorage.getItem('carrito'));
+    let resultado = new carrito();
+    resultado.copiarInstancia(carritoJSON);
+
+    //Convertir resultado.user en objeto de tipo user
+    let newUser = new user();
+    newUser.copiarInstancia(resultado.getUser());
+    resultado.setUser(newUser);
+
+    //convertir resultado.compra en una lista de tipo compra
+    let auxiliar = resultado.getCompra().map((value) => {
+        let itemTProducto = new compra();
+        itemTProducto.copiarInstancia(value);
+        value = itemTProducto;
+        return value;  
+    });
+    resultado.setCompra(auxiliar);
+    return resultado; 
+}
+
+/* Agregar Producto al carrito en el Storage y suma el costo
+Precondición hay un carrito en el storage*/
+export const setCompraCarritoSTORAGE = (compra) =>{
+    let cart = getCarrito();
+    cart.agregarCompra(compra);
+    localStorage.setItem("carrito", JSON.stringify(cart));
+}
 
 /* Acomoda el contenido del carrito en el html de carrito.html
 key1:indica donde se guardan las compras
@@ -85,57 +114,14 @@ export const setCompraCarritoHTML = (key, compra) =>{
     key.appendChild(divCompra);
 }
 
-
 export const udatePrecioHTML =(key, precio) => {
     let newPrecio = parseInt(key.textContent);
     newPrecio += parseInt(precio);
-    key.textContent = "$" + newPrecio;
+    key.textContent = newPrecio;
 }
 
-/* Retorna el objeto tipo carrito con la información guardada en el storage con la clave "carrito" */
-export const getCarrito = ()=>{
-    let carritoJSON = JSON.parse(localStorage.getItem('carrito'));
-    let resultado = new carrito();
-    resultado.copiarInstancia(carritoJSON);
-
-    //Convertir resultado.user en objeto de tipo user
-    let newUser = new user();
-    newUser.copiarInstancia(resultado.getUser());
-    resultado.setUser(newUser);
-
-    //convertir resultado.compra en una lista de tipo compra
-    let auxiliar = resultado.getCompra().map((value) => {
-        let itemTProducto = new compra();
-        itemTProducto.copiarInstancia(value);
-        value = itemTProducto;
-        return value;  
-    });
-    resultado.setCompra(auxiliar);
-    return resultado; 
-}
-
-/* Agregar Producto al carrito en el Storage y suma el costo
-Precondición hay un carrito en el storage*/
-export const setCompraCarritoSTORAGE = (compra) =>{
-    let cart = getCarrito();
-    cart.agregarCompra(compra);
-    localStorage.setItem("carrito", JSON.stringify(cart));
-}
-
+/* agarra un producto crea el objeto compra y lo setea en el carrito, tanto Storage como html */
 export const setCompraCarrito = (producto) =>{
-    //agrego el producto al storage;
-    setCompraCarritoSTORAGE(producto);
-    
-    //Agrego el monto del carrito al HTML
-    let carrito = getCarrito();
-    let total = document.querySelector(".cart-info-total");
-    total.textContent = `Total: ${carrito.getMonto()}`;
-
-    //Agrego una tarjeta con la info del producto
-    let cartBoxDiv1 = document.querySelector(".cartBoxDiv1");
-    let newProduct = document.createElement("div");
-    cartBoxDiv1.appendChild(newProduct);
-    let contenido = document.createElement("p");
-    newProduct.appendChild(contenido);
-    contenido.textContent = `Nombre: ${producto.getName()}, Modelo: ${producto.getModel()}`
+    let compra1= new compra(producto);
+    setCompraCarritoSTORAGE(compra1);
 }

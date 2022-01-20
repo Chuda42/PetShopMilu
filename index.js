@@ -31,7 +31,7 @@ if(LOGIN.hayUserIn()){
 
 
     if(document.querySelector(".carrito-contenedor") != undefined){
-        document.querySelector(".carrito-contenedor-boton").addEventListener("click", ()=>{
+        document.querySelector("#plusBtn").addEventListener("click", ()=>{
             let nameProduct = prompt("nombre");
             let model = prompt("model");
             let img = prompt("img");
@@ -40,6 +40,7 @@ if(LOGIN.hayUserIn()){
 
             let producto1 = new producto(nameProduct, model, img, price, id);
             let compra1 = new compra(producto1);
+            CART.setCompraCarritoSTORAGE(compra1);
             CART.setCompraCarritoHTML(document.querySelector(".carrito-contenedor-compras"), compra1);
             CART.udatePrecioHTML(document.querySelector("#totalMonto-num"), compra1.monto);
         })
