@@ -1,23 +1,22 @@
 /* 
     Clase que indica la información sobre una compra donde tiene productos y un costo total
 */
-
 export class compra{
-    constructor(user){
-        this.user = user;     //tipo user
-        this.productos = [];        //tipo lista de productos
-        this.monto = 0;             //int, monto de la compra
+    constructor(producto){
+        this.product = product;         //tipo producto
+        this.cant = 1;                  //tipo int representa cuantos del mismo producto
+        this.monto = producto.precio;   //int, monto de la compra
     }
 
     /* METODOS RETORNO DE PROPIEDADES  */
     //retorna user 
-    getUser() {
-        return this.user;
+    getProduct() {
+        return this.product;
     }
 
     //retorna this.productos lista de productos
-    getProductos(){
-        return this.productos;
+    getCant(){
+        return this.cant;
     }
 
     //retorna this.monto, monto total de la compra
