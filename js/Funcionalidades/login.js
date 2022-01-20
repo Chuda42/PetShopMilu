@@ -33,7 +33,7 @@ export const getUserIn = ()=> {
     let resultado;
     if (hayUserIn()){
         let userIn = JSON.parse(localStorage.getItem("userIN"));
-        let resultado = new user();
+        resultado = new user();
         resultado.copiarInstancia(userIn);
     }else
         resultado = 0;

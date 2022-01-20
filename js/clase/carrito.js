@@ -3,11 +3,19 @@
 */
 
 export class carrito{
-    constructor(user, id){
+    constructor(user){
         this.user = user;       //tipo user
-        this.product = [];      //lista tipo producto
+        this.compra = [];      //lista tipo compra
         this.monto = 0;         //int, representa monto total de la compra
-        this.id = id;           //int que identifica a la compra
+        this.id = user.id;      //int id del carrito
+    }
+
+    /* Copiar instancia toma un objeto con las mismas propiedades que carrito y crea un objeto de tipo carrito*/
+    copiarInstancia(carrito){
+        this.user    = carrito.user;      
+        this.compra = carrito.compra;      
+        this.monto   = carrito.monto;         
+        this.id      = carrito.id; 
     }
 
     /* METODOS DE RETORNO DE PROPIEDADES*/
@@ -17,8 +25,8 @@ export class carrito{
     }
 
     //retorna la lista de productos this.product
-    getProduct(){
-        return this.product;
+    getCompra(){
+        return this.compra;
     }
 
     //retorna el monto de la compra this.monto
@@ -31,12 +39,20 @@ export class carrito{
         return this.id;
     }
 
+    setUser(user){
+        this.user = user;
+    }
+
+    setCompra(compra){
+        this.compra = compra;
+    }
+
 
     /* METODOS DE ACUTALIZACIÓN DE PROPIEDADES */
     //agregar producto, agrega un elemento tipo producto a this.product, y suma el monto al total
-    agregarProducto(producto){
-        this.product.push(producto);
-        this.monto += producto.getPrice();
+    agregarCompra(compra){
+        this.compra.push(compra);
+        this.monto += compra.monto;
     }
     
 }//class

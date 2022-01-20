@@ -1,12 +1,16 @@
 import {user} from './js/clase/user.js'
 //import {factura} from './js/clase/facturas.js'
 import * as LOGIN from './js/Funcionalidades/login.js'
+import * as CART from  './js/Funcionalidades/handlercarrito.js'
 
 /* Main */
 
 //Inicializaciones
 LOGIN.initRegistroUsers();
 LOGIN.initUserIn();
+if(LOGIN.hayUserIn()){
+    CART.initCarritoSTORAGE()
+}
 
 /* Registrarse con los input */
 let registrarse = document.querySelector(".contenedor-register-boton")

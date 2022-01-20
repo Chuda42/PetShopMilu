@@ -8,6 +8,15 @@ export class producto{
         this.descuento = 0;     
     }
 
+    //Copia la instancia de un objeto con las mismas propiedades que producto pero devuelve un objeto con el tipo poroducto
+    copiarInstancia(product){
+        this.name = product.name;       
+        this.model = product.model;     
+        this.price = product.price;     
+        this.id = product.id;           
+        this.descuento = product.descuento;     
+    }
+
     /* Getters */
     getName(){
         return this.name;

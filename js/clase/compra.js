@@ -8,6 +8,12 @@ export class compra{
         this.monto = producto.precio;   //int, monto de la compra
     }
 
+    copiarInstancia(compra){
+        this.product = compra.product;
+        this.cant = compra.cant;
+        this.monto = compra.monto;
+    }
+
     /* METODOS RETORNO DE PROPIEDADES  */
     //retorna user 
     getProduct() {
