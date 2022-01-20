@@ -7,7 +7,11 @@ export class carrito{
         this.user = user;       //tipo user
         this.compra = [];      //lista tipo compra
         this.monto = 0;         //int, representa monto total de la compra
-        this.id = user.id;      //int id del carrito
+        if(user != undefined){
+            this.id = user.id;
+        }else
+            this.id = 0;
+
     }
 
     /* Copiar instancia toma un objeto con las mismas propiedades que carrito y crea un objeto de tipo carrito*/

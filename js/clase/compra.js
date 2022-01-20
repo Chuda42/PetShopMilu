@@ -3,9 +3,10 @@
 */
 export class compra{
     constructor(producto){
-        this.product = product;         //tipo producto
+        this.product = producto;         //tipo producto
         this.cant = 1;                  //tipo int representa cuantos del mismo producto
-        this.monto = producto.precio;   //int, monto de la compra
+        (producto != undefined)?this.monto = producto.price: this.monto =0;
+        (producto != undefined)?this.id =producto.id: this.id = 0;
     }
 
     copiarInstancia(compra){
@@ -28,6 +29,10 @@ export class compra{
     //retorna this.monto, monto total de la compra
     getMonto(){
         return this.monto;
+    }
+
+    setId(id){
+        this.id = id;
     }
 
 }//class
