@@ -1,1 +1,49 @@
-.carrito-contenedor
+.carrito-contenedor{
+    display: flex;
+    flex-direction: column;
+    min-width: 100%;
+    justify-content: space-between;
+}
+
+.carrito-contenedor-noBoton{
+    min-width: 100%;
+    height: 500px;
+}
+
+.carrito-contenedor-total{
+    display: flex;
+    min-width: 20%;
+    max-width: 20%;
+    height: 500px;
+    font-size: 30px;
+    justify-content:center;
+    align-items:center;
+}
+
+.carrito-contenedor-total ul{
+    list-style: none;
+    border: 1px solid black;
+    border-radius: 10px 10px 10px 10px;
+    padding: 5%;
+    width: 200px;
+}
+
+.carrito-contenedor-total-btn{
+    display:flex;
+    justify-content: center;
+    margin: 10px;
+    border: 1px solid black;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.carrito-contenedor-compras{
+    min-width: 65%;
+}
+
+.carrito-contenedor-boton{
+    display: flex;
+    justify-content: center;
+    min-width: 100%;
+    font-size: 50px;
+    margin: 20px
+}
