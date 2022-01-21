@@ -58,5 +58,9 @@ export class carrito{
         this.compra.push(compra);
         this.monto += compra.monto;
     }
+
+    updateMonto(monto){
+        this.monto = this.monto + monto;
+    }
     
 }//class

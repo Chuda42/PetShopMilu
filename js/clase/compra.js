@@ -2,10 +2,10 @@
     Clase que indica la información sobre una compra donde tiene productos y un costo total
 */
 export class compra{
-    constructor(producto){
+    constructor(producto, cant){
         this.product = producto;         //tipo producto
-        this.cant = 1;                  //tipo int representa cuantos del mismo producto
-        (producto != undefined)?this.monto = producto.price: this.monto =0;
+        this.cant = cant;                  //tipo int representa cuantos del mismo producto
+        (producto != undefined)?this.monto = producto.price*cant: this.monto =0;
         (producto != undefined)?this.id =producto.id: this.id = 0;
     }
 
@@ -13,6 +13,7 @@ export class compra{
         this.product = compra.product;
         this.cant = compra.cant;
         this.monto = compra.monto;
+        this.id = compra.id;
     }
 
     /* METODOS RETORNO DE PROPIEDADES  */
@@ -34,5 +35,9 @@ export class compra{
     setId(id){
         this.id = id;
     }
+
+    updateMonto(cant){
+        this.monto = this.product.price*cant;
+    };
 
 }//class

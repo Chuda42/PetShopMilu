@@ -10,10 +10,12 @@ import * as LOGIN from './login.js';
 
 /* Crea un carrito y lo guarda en una variable en el storage con la key "carrito" */
 export const initCarritoSTORAGE = () =>{
-    let user = LOGIN.getUserIn();
-    //Instancio el carrito con el user logueado, lo guardo en el storage
-    let cart = new carrito(user);
-    localStorage.setItem('carrito', JSON.stringify(cart));
+    if(!localStorage.getItem("carrito")){
+        let user = LOGIN.getUserIn();
+        //Instancio el carrito con el user logueado, lo guardo en el storage
+        let cart = new carrito(user);
+        localStorage.setItem('carrito', JSON.stringify(cart));
+    }
 }
 
 /* Retorna el objeto tipo carrito con la información guardada en el storage con la clave "carrito" */
@@ -47,21 +49,21 @@ export const setCompraCarritoSTORAGE = (compra) =>{
 }
 
 /* Acomoda el contenido del carrito en el html de carrito.html
-key1:indica donde se guardan las compras
-key2:Donde se actualiza el precio  */
-export const initCarritoHTML = (key1, key2) => {
+nodo1:indica donde se guardan las compras
+nodo2:Donde se actualiza el precio  */
+export const initCarritoHTML = (nodo1, nodo2) => {
     let cart = getCarrito();
     cart.compra.forEach(element => {
-        setCompraCarritoHTML(key1, element);  
+        setCompraCarritoHTML(nodo1, element);  
     })
-    udatePrecioHTML(key2, cart.monto);
+    udatePrecioHTML(nodo2, cart.monto);
 }
 
-/* la key es el div donde crea el html de la compra */
-export const setCompraCarritoHTML = (key, compra) =>{
+/* la nodo es el div donde crea el html de la compra */
+export const setCompraCarritoHTML = (nodo, compra) =>{
     let divCompra = document.createElement('div');
     divCompra.className = "compra";
-    divCompra.id = `compra${compra.id}`
+    divCompra.id = `com${compra.id}`
     
     /* nombre-modelo */
     let divNombreModelo = document.createElement('div');
@@ -90,13 +92,56 @@ export const setCompraCarritoHTML = (key, compra) =>{
     divCant.className = 'cant';
     /* h4 */
     let divCantH4 = document.createElement('h4');
-    divCantH4.textContent = `Cant: ${compra.cant}`;
+    divCantH4.textContent = `Cant: `;
+    let divCantH4span = document.createElement('span');
+    divCantH4span.textContent =  `${compra.cant}`;
+    divCantH4.appendChild(divCantH4span);
+    divCantH4span.id = `can${compra.id}`
     divCant.appendChild(divCantH4);
     /* flechitas */
     let i1 = document.createElement('i');
     i1.className = "fas fa-arrow-circle-left";
+    i1.id = `izq${compra.id}`;
     let i2 = document.createElement('i');
     i2.className = "fas fa-arrow-circle-right"
+    i2.id = `der${compra.id}`
+
+    /* Sumo el evento que hace que las felchitas funcionen
+    Importante hacerlo cuando se crea la etiqueta para que haga efecto
+    con cada una nueva creada */
+    i1.addEventListener('click', (event) =>{
+        let id = getIdCompra(event.target.id);
+        let carrito = getCarrito();
+        carrito.compra.map(element => {
+            if (element.id == id){
+                element.cant = element.cant - 1;
+                element.updateMonto(element.cant)
+                carrito.updateMonto(element.monto - carrito.monto);
+                
+            }
+        actualizarHtml(id, "izq");
+        localStorage.setItem("carrito", JSON.stringify(carrito));
+        
+        })
+    })
+    i2.addEventListener('click', (event) =>{
+        let id = getIdCompra(event.target.id);
+        let carrito = getCarrito();
+        carrito.compra.map(element => {
+            if (element.id == id){
+                element.cant = element.cant + 1;
+                element.updateMonto(element.cant);
+                carrito.updateMonto(element.monto - carrito.monto);
+            
+            }
+        actualizarHtml(id, "der");
+        localStorage.setItem("carrito", JSON.stringify(carrito))
+        
+        })
+
+    })
+
+
     divCant.appendChild(i1);
     divCant.appendChild(i2);
 
@@ -105,23 +150,62 @@ export const setCompraCarritoHTML = (key, compra) =>{
     divPrecio.className = 'precio';
     /* h4 */
     let divPrecioH4 = document.createElement('h4');
-    divPrecioH4.textContent = `Precio: ${compra.monto}`
+    divPrecioH4.textContent = `Precio: `
+    let divPrecioH4span = document.createElement('span');
+    divPrecioH4span.textContent =  `${compra.monto}`;
+    divPrecioH4.appendChild(divPrecioH4span);
+    divPrecioH4span.id = `pre${compra.id}`
     divPrecio.appendChild(divPrecioH4);
 
     divCompra.appendChild(divNombreModelo);
     divCompra.appendChild(divCant);
     divCompra.appendChild(divPrecio);
-    key.appendChild(divCompra);
+    nodo.appendChild(divCompra);
 }
 
-export const udatePrecioHTML =(key, precio) => {
-    let newPrecio = parseInt(key.textContent);
+export const udatePrecioHTML =(nodo, precio) => {
+    let newPrecio = parseInt(nodo.textContent);
     newPrecio += parseInt(precio);
-    key.textContent = newPrecio;
+    nodo.textContent = newPrecio;
 }
 
 /* agarra un producto crea el objeto compra y lo setea en el carrito, tanto Storage como html */
 export const setCompraCarrito = (producto) =>{
     let compra1= new compra(producto);
     setCompraCarritoSTORAGE(compra1);
+}
+
+/* funcion que suma o resta productos con las flechitas */
+//key indica si es la flechita derecha o la izquierda
+export const cantFlchitas = (key) => {
+    if (key == "derecha"){
+
+    }
+}
+
+ /* dado el id de las etiquetas saca el id de la compra */
+export const getIdCompra = (id) =>{
+    let resultado = parseInt(id[3]);
+    return resultado;
+}
+
+/* actualiza el html de las flechas si la key es izquierda resta 1 si es derecha suma 1 */
+export const actualizarHtml = (id, key) =>{
+    let cant = document.querySelector(`#can${id}`).textContent;
+    let pre = document.querySelector(`#pre${id}`).textContent;
+    let newCant = parseInt(cant);
+    let newPre = parseInt(pre)/newCant;
+    
+    if(key == "izq"){
+        newCant--;
+        newPre = newPre * newCant;
+        document.querySelector(`#can${id}`).textContent = `${newCant}`;
+        document.querySelector(`#pre${id}`).textContent = `${newPre}`;
+    }else{
+        newCant++;
+        newPre = newPre * newCant;
+        document.querySelector(`#can${id}`).textContent = `${newCant++}`;
+        document.querySelector(`#pre${id}`).textContent = `${newPre}`;
+    }
+
 }
