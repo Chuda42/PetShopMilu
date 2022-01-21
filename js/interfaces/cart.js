@@ -64,13 +64,14 @@ export const setCompraCarritoHTML = (nodo, compra) =>{
     let divCompra = document.createElement('div');
     divCompra.className = "compra";
     divCompra.id = `com${compra.id}`
+    let id = compra.id;
     
     /* nombre-modelo */
     let divNombreModelo = document.createElement('div');
     divNombreModelo.className = "nombre-modelo";
     /* img */
     let imgNM = document.createElement('img');
-    imgNM.src = "#";
+    imgNM.src = `${compra.product.img}`;
     imgNM.alt = `foto-producto${compra.product.id}`
     divNombreModelo.appendChild(imgNM);
     /* ul */
@@ -106,41 +107,6 @@ export const setCompraCarritoHTML = (nodo, compra) =>{
     i2.className = "fas fa-arrow-circle-right"
     i2.id = `der${compra.id}`
 
-    /* Sumo el evento que hace que las felchitas funcionen
-    Importante hacerlo cuando se crea la etiqueta para que haga efecto
-    con cada una nueva creada */
-    i1.addEventListener('click', (event) =>{
-        let id = getIdCompra(event.target.id);
-        let carrito = getCarrito();
-        carrito.compra.map(element => {
-            if (element.id == id){
-                element.cant = element.cant - 1;
-                element.updateMonto(element.cant)
-                carrito.updateMonto(element.monto - carrito.monto);
-                
-            }
-        actualizarHtml(id, "izq");
-        localStorage.setItem("carrito", JSON.stringify(carrito));
-        
-        })
-    })
-    i2.addEventListener('click', (event) =>{
-        let id = getIdCompra(event.target.id);
-        let carrito = getCarrito();
-        carrito.compra.map(element => {
-            if (element.id == id){
-                element.cant = element.cant + 1;
-                element.updateMonto(element.cant);
-                carrito.updateMonto(element.monto - carrito.monto);
-            
-            }
-        actualizarHtml(id, "der");
-        localStorage.setItem("carrito", JSON.stringify(carrito))
-        
-        })
-
-    })
-
 
     divCant.appendChild(i1);
     divCant.appendChild(i2);
@@ -161,6 +127,39 @@ export const setCompraCarritoHTML = (nodo, compra) =>{
     divCompra.appendChild(divCant);
     divCompra.appendChild(divPrecio);
     nodo.appendChild(divCompra);
+
+        /* Sumo el evento que hace que las felchitas funcionen
+    Importante hacerlo cuando se crea la etiqueta para que haga efecto
+    con cada una nueva creada */
+    document.querySelector(`#izq${id}`).addEventListener('click', (event) =>{
+        let idizq = getIdCompra(event.target.id);
+        let carrito = getCarrito();
+        carrito.compra.map(element => {
+            if (element.id == idizq){
+                element.cant = element.cant - 1;
+                element.updateMonto(element.cant)
+                carrito.updateMonto(-1*element.product.price);
+                localStorage.setItem("carrito", JSON.stringify(carrito));
+                actualizarHtml(id, "izq");
+            }
+        
+        
+        
+        })
+    })
+    document.querySelector(`#der${id}`).addEventListener('click', (event) =>{
+        let idder = getIdCompra(event.target.id);
+        let carrito = getCarrito();
+        carrito.compra.map(element => {
+            if (element.id == idder){
+                element.cant = element.cant + 1;
+                element.updateMonto(element.cant);
+                carrito.updateMonto(element.product.price);
+                localStorage.setItem("carrito", JSON.stringify(carrito))
+                actualizarHtml(id, "der");
+            }
+        })
+    })
 }
 
 export const udatePrecioHTML =(nodo, precio) => {
@@ -185,7 +184,7 @@ export const cantFlchitas = (key) => {
 
  /* dado el id de las etiquetas saca el id de la compra */
 export const getIdCompra = (id) =>{
-    let resultado = parseInt(id[3]);
+    let resultado = parseInt(id[id.length - 1]);
     return resultado;
 }
 
@@ -195,17 +194,20 @@ export const actualizarHtml = (id, key) =>{
     let pre = document.querySelector(`#pre${id}`).textContent;
     let newCant = parseInt(cant);
     let newPre = parseInt(pre)/newCant;
-    
+    let total = document.querySelector("#totalMonto-num").textContent;
+    total = parseInt(total);
     if(key == "izq"){
-        newCant--;
+        newCant = newCant-1;
+        total = total - newPre;
         newPre = newPre * newCant;
         document.querySelector(`#can${id}`).textContent = `${newCant}`;
         document.querySelector(`#pre${id}`).textContent = `${newPre}`;
     }else{
-        newCant++;
+        newCant = newCant+1;
+        total = total + newPre;
         newPre = newPre * newCant;
-        document.querySelector(`#can${id}`).textContent = `${newCant++}`;
+        document.querySelector(`#can${id}`).textContent = `${newCant}`;
         document.querySelector(`#pre${id}`).textContent = `${newPre}`;
-    }
-
+    } 
+    document.querySelector("#totalMonto-num").textContent = total;
 }

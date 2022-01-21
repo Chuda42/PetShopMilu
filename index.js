@@ -14,18 +14,7 @@ LOGIN.initUserIn();
 if(LOGIN.hayUserIn()){
     CART.initCarritoSTORAGE();
 
-/*     let producto2 = new producto("perro", "pug", "#", 99, 0);
-    let producto3 = new producto("gato", "tom", "#", 991, 7);;
-    let producto4 = new producto("raton", "jerry", "#", 199, 3);;
-
-    let compra2 = new compra(producto2, 2);
-    let compra3 = new compra(producto3, 2);
-    let compra4 = new compra(producto4, 2);
-
-    CART.setCompraCarritoSTORAGE(compra2);
-    CART.setCompraCarritoSTORAGE(compra3);
-    CART.setCompraCarritoSTORAGE(compra4); */
-    if(!CART.getCarrito().compra == [])
+    if(CART.getCarrito().compra != [])
         CART.initCarritoHTML(document.querySelector(".carrito-contenedor-compras"), document.querySelector("#totalMonto-num"));
 
 
@@ -39,7 +28,7 @@ if(LOGIN.hayUserIn()){
             let id = prompt("id");
 
             let producto1 = new producto(nameProduct, model, img, price, id);
-            let compra1 = new compra(producto1, 2);
+            let compra1 = new compra(producto1, 1);
             CART.setCompraCarritoSTORAGE(compra1);
             CART.setCompraCarritoHTML(document.querySelector(".carrito-contenedor-compras"), compra1);
             CART.udatePrecioHTML(document.querySelector("#totalMonto-num"), compra1.monto);

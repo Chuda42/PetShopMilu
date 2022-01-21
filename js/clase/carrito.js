@@ -60,7 +60,7 @@ export class carrito{
     }
 
     updateMonto(monto){
-        this.monto = this.monto + monto;
+        this.monto = parseInt(this.monto) + parseInt(monto);   
     }
     
 }//class

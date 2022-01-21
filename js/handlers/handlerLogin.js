@@ -8,6 +8,7 @@ loginV.addEventListener("click", () => {
     let pass = document.querySelector("#input-login-pass").value;
     LOGIN.login(email, pass);
 });
+
 document.addEventListener('keydown', (event) => {
     if (event.key == "Enter"){
         loginV.click();
