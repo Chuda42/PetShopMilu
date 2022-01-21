@@ -44,10 +44,8 @@ export const setUserIn = (usuario) => {
     localStorage.setItem('userIN', JSON.stringify(usuario));
 }
 
-export const login = () => {
-    let email = document.querySelector("#input-login-email").value;
-    let pass = document.querySelector("#input-login-pass").value;
-
+export const login = (email, pass) => {
+    
     let confirm;
     //Busco en mi registro si esta el usuario
     if (estaUserRegistrado(email)){
@@ -110,51 +108,33 @@ export const estaUserRegistrado = (email) =>{
     return resultado != undefined;
 }
 
-export const registrarNewUser = ()=>{
-    let nombre = document.querySelector("#input-register-name").value;
-    let email = document.querySelector("#input-register-email").value;
-    let pass = document.querySelector("#input-register-pass").value;
-    let passConfirm = document.querySelector("#input-register-pass-confirm").value;
+/* Precondición los campos no estan vacios */
+export const registrarNewUser = (nombre, email, pass)=>{
+    let newUser = new user(nombre, pass, email, 0);
+    let id = newUser.hash();
+    newUser.setId(id);
 
-    if(nombre == undefined || email == undefined || pass == undefined){
-        alert("No se pudo registrar al usuario porque dejo campos vacios");
-        /* Reseteo los campos */
-        document.querySelector("#input-register-name").value         = null;
-        document.querySelector("#input-register-email").value        = null;
-        document.querySelector("#input-register-pass").value         = null;
-        document.querySelector("#input-register-pass-confirm").value = null;
-    }else if(pass != passConfirm){
-        alert("Las contraseñas no coinciden");
-        /* Reseteo los campos de las contra */
-        document.querySelector("#input-register-pass").value         = null;
-        document.querySelector("#input-register-pass-confirm").value = null;
+    let resultado;
+    resultado = getRegistroUsers();
+
+    let mensaje;
+    let icon;
+    let back;
+    if(estaUserRegistrado(newUser.email)){
+        mensaje = "Ya existe un usuario registrado con ese email";
+        icon = "fas fa-times-circle";
+        back = "register";
     }else{
-        let newUser = new user(nombre, pass, email, 0);
-        let id = newUser.hash();
-        newUser.setId(id);
-
-        let resultado;
-        resultado = getRegistroUsers();
-
-        let mensaje;
-        let icon;
-        let back;
-        if(estaUserRegistrado(newUser.email)){
-            mensaje = "Ya existe un usuario registrado con ese email";
-            icon = "fas fa-times-circle";
-            back = "register";
-        }else{
-            //Registro
-            guardarEnRegistroUser(newUser, resultado);
-            setRegistroUsers(resultado);
-            mensaje = "Usuario registrado con exito";
-            icon = "fas fa-check-circle";
-            back = "login";
-        }
-        registroOk(mensaje, icon);
-        registroBack(back);
-        setClass("post-registro", document.querySelector(".contenedor-register"))
-    }  
+        //Registro
+        guardarEnRegistroUser(newUser, resultado);
+        setRegistroUsers(resultado);
+        mensaje = "Usuario registrado con exito";
+        icon = "fas fa-check-circle";
+        back = "login";
+    }
+    registroOk(mensaje, icon);
+    registroBack(back);
+    setClass("post-registro", document.querySelector(".contenedor-register"))     
 }
 
 export const registroOk = (h2content, iconClass) => {
