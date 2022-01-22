@@ -106,8 +106,6 @@ export const setCompraCarritoHTML = (nodo, compra) =>{
     let i2 = document.createElement('i');
     i2.className = "fas fa-arrow-circle-right"
     i2.id = `der${compra.id}`
-
-
     divCant.appendChild(i1);
     divCant.appendChild(i2);
 
@@ -128,7 +126,7 @@ export const setCompraCarritoHTML = (nodo, compra) =>{
     divCompra.appendChild(divPrecio);
     nodo.appendChild(divCompra);
 
-        /* Sumo el evento que hace que las felchitas funcionen
+    /* Sumo el evento que hace que las felchitas funcionen
     Importante hacerlo cuando se crea la etiqueta para que haga efecto
     con cada una nueva creada */
     document.querySelector(`#izq${id}`).addEventListener('click', (event) =>{
@@ -141,10 +139,7 @@ export const setCompraCarritoHTML = (nodo, compra) =>{
                 carrito.updateMonto(-1*element.product.price);
                 localStorage.setItem("carrito", JSON.stringify(carrito));
                 actualizarHtml(id, "izq");
-            }
-        
-        
-        
+            }  
         })
     })
     document.querySelector(`#der${id}`).addEventListener('click', (event) =>{

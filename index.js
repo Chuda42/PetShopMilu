@@ -33,12 +33,7 @@ if(LOGIN.hayUserIn()){
             CART.setCompraCarritoHTML(document.querySelector(".carrito-contenedor-compras"), compra1);
             CART.udatePrecioHTML(document.querySelector("#totalMonto-num"), compra1.monto);
         })
-    }
-
-
-
-
-    
+    }   
 }
 
 
