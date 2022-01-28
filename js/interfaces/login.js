@@ -59,8 +59,61 @@ export const login = (email, pass) => {
 }
 
 export const loginOk = (confirm) => {
-    alert(`${confirm}`);
+    //Le saco el div dentro del .contenedor-login
+    let divLogin = document.querySelector(".contenedor-login");
+    divLogin.removeChild(document.querySelector(".contenedor-login-overlay"));
+
+    //Creo un div para poner adentro el mensaje
+    let newDiv = document.createElement("div");
+    divLogin.appendChild(newDiv);
+    newDiv.className = "registroOk-mensaje"
+
+    //Creo el mensaje con un h2 y un icono 
+    let h2 = document.createElement("h2");
+    let icon = document.createElement("i");
+    newDiv.appendChild(h2);
+    newDiv.appendChild(icon);
+
+    let h2content;
+    let iconClass;
+    if (confirm == "notPass"){
+        h2content = "La contraseña esta equivocada";
+        iconClass = "fas fa-times-circle"
+        loginBack("login")
+    }else if (confirm == "notUser"){
+        h2content = "El usuario no esta registrado";
+        iconClass = "fas fa-times-circle"
+        loginBack("login")
+    }else{
+        h2content = "Logueado correctamente";
+        iconClass = "fas fa-check-circle"
+        loginBack("index")
+    }
+    //Relleno el mensaje
+    h2.textContent = h2content;
+    icon.className = iconClass;
+
+    //Para pintar de verde o rojo el icono
+    (iconClass == "fas fa-check-circle")?icon.id = "iconTick":icon.id = "iconCross"
+    setClass("post-registro", document.querySelector(".contenedor-login"));
 }
+
+export const loginBack = (key) => {
+    let divLogin = document.querySelector(".contenedor-login");
+    let a = document.createElement("a");
+    divLogin.appendChild(a);
+    
+    let newDiv = document.createElement("div");
+    a.appendChild(newDiv);
+    newDiv.className = "registroOk-boton"
+    
+    let h3 = document.createElement("h3");
+    h3.textContent = "Volver";
+    newDiv.appendChild(h3);
+
+    (key == "login")? a.href = "login.html": a.href = "../index.html"
+}
+
 
 /* registro */
 

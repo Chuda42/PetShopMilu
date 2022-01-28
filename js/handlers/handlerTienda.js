@@ -43,13 +43,22 @@ document.querySelector("#logout-button").addEventListener("click", () => {
 
 /* Esto se tiene que generar automatico para cada producto */
 document.querySelector("#AgregarProducto-store-1").addEventListener("click", () => {
-    let compra1 = new compra(producto1, 1);
-    CART.setCompraCarritoSTORAGE(compra1);
-    document.getElementById("pag-carrito-entrar").click()
+    if(LOGIN.hayUserIn()){
+        let compra1 = new compra(producto1, 1);
+        CART.setCompraCarritoSTORAGE(compra1);
+        document.getElementById("pag-carrito-entrar").click()
+    }else{
+        document.querySelector("#login-entrar").click();
+    }
+    
 })
 
 document.querySelector("#AgregarProducto-store-2").addEventListener("click", () => {
-    let compra2 = new compra(producto2, 1);
-    CART.setCompraCarritoSTORAGE(compra2);
-    document.getElementById("pag-carrito-entrar").click()
+    if(LOGIN.hayUserIn()){
+        let compra2 = new compra(producto2, 1);
+        CART.setCompraCarritoSTORAGE(compra2);
+        document.getElementById("pag-carrito-entrar").click()
+    }else{
+        document.querySelector("#login-entrar").click();
+    }
 })
