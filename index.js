@@ -5,36 +5,44 @@ import {compra} from './js/clase/compra.js'
 //import {factura} from './js/clase/facturas.js'
 import * as LOGIN from './js/interfaces/login.js'
 import * as CART from  './js/interfaces/cart.js'
+const {jQuery} = window.jQuery;
+const $ = window.jQuery;
 
 /* Main */
 
 //Inicializaciones
 LOGIN.initRegistroUsers();
 LOGIN.initUserIn();
+
+
+
+/* Arreglo de la barra de navegación */
 if(LOGIN.hayUserIn()){
     CART.initCarritoSTORAGE();
 
-    if(CART.getCarrito().compra != [])
-        CART.initCarritoHTML(document.querySelector(".carrito-contenedor-compras"), document.querySelector("#totalMonto-num"));
+    /* Se ve */
+    $("#pag-logout").show();
+    $("#pag-carrito").show();
 
+    /* No se ve */
+    $("#pag-carrito-login").hide();
+    $("#pag-login").hide()
 
+}else{
+    /* Se ve */
+    $("#pag-carrito-login").show();
+    $("#pag-login").show()
+    /* No se ve */
+    $("#pag-logout").hide();
+    $("#pag-carrito").hide();
 
-    if(document.querySelector(".carrito-contenedor") != undefined){
-        document.querySelector("#plusBtn").addEventListener("click", ()=>{
-            let nameProduct = prompt("nombre");
-            let model = prompt("model");
-            let img = prompt("img");
-            let price = prompt("price");
-            let id = prompt("id");
-
-            let producto1 = new producto(nameProduct, model, img, price, id);
-            let compra1 = new compra(producto1, 1);
-            CART.setCompraCarritoSTORAGE(compra1);
-            CART.setCompraCarritoHTML(document.querySelector(".carrito-contenedor-compras"), compra1);
-            CART.udatePrecioHTML(document.querySelector("#totalMonto-num"), compra1.monto);
-        })
-    }   
+    
 }
+
+/* Logout */
+document.querySelector("#logout-button").addEventListener("click", () => {
+    LOGIN.logout();
+})
 
 
 

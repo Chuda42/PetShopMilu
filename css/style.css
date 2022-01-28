@@ -131,7 +131,7 @@ p{
     border-left: 1px solid black;
 }
 
-.barraNav-main ul li a{
+.barraNav-main ul li a, .barraNav-main ul li span{
     font-size: 30px;
 }
 

@@ -43,7 +43,7 @@
 }
 
 
-.carrito-contenedor-boton{
+.carrito-contenedor-boton i{
     display: flex;
     justify-content: center;
     min-width: 100%;

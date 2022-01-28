@@ -1,5 +1,7 @@
 .store-container{
+    display: flex;
     width: 100%;
+    margin-bottom: 100px;
 }
 
 .store-filter-list{
@@ -18,5 +20,37 @@
 
 .store-filter-list li{
     text-align: center;
+    font-size: 30px;
+}
+
+.store-stock{
+    width: 100%;
+    display:grid;
+    grid-template-columns: 30% 30% 30%;
+    column-gap: 3%;
+    padding: 3%;
+    padding-left: 7%;
+}
+
+/* Producto Card */
+.producto-card {
+    min-height:500px;
+    max-width: 300px;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius:20px;
+    background-color: #f7ad46dc;
+}
+
+.producto-card-img{
+    width: 100%;
+    display: flex;
+    justify-content:center;
+}
+.producto-card-img img{
+    width: 150px
+}
+
+.producto-card li {
     font-size: 30px;
 }

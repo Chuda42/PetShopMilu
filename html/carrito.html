@@ -38,7 +38,7 @@
                     <li><i class="fas fa-cat"></i><a href="../html/EnMantenimiento.html"> Nosotros</a></li>
                     <li><i class="fas fa-address-book"></i><a href="../html/EnMantenimiento.html">Agenda</a></li>
                     <li><i class="fas fa-store"></i><a href="../html/tienda.html">Tienda</a></li>
-                    <li><i class="fas fa-dog"></i><a href="../html/login.html">Login  </a></li>
+                    <li><i class="fas fa-dog"></i><a id="logout-button" href="../index.html">Logout</a></li>
                 </ul>
             </nav>
         </div>
@@ -56,13 +56,17 @@
                 <div class = "carrito-contenedor-compras"></div>
             </div>
             <div class = "carrito-contenedor-boton">
-                <i class = "fas fa-plus-circle" id ="plusBtn"></i>
+                <a href="./tienda.html">
+                    <i class = "fas fa-plus-circle" id ="plusBtn"></i>
+                </a>
+                
             </div>
         </div>
     </div><!-- contenedor -->
 
     <!-- JS scripts -->
-    <script src = "../index.js" type ="module"></script>
+    <script src = "../js/lib/jquery.min.js"></script>
+    <script src = "../js/handlers/handlerCarrito.js" type ="module"></script>
     <script src="../js/animaciones.js"></script>
     
 </body>

@@ -1,20 +1,23 @@
 export class producto{
-    constructor(name, model, img, price, id){
+    constructor(name, model, img, price, id, descripcion){
         this.name = name;       
         this.model = model;
         this.img = img;    
         this.price = price;     
         this.id = id;         
-        this.descuento = 0;     
+        this.descuento = 0;
+        this.descripcion = descripcion;
     }
 
     //Copia la instancia de un objeto con las mismas propiedades que producto pero devuelve un objeto con el tipo poroducto
     copiarInstancia(product){
         this.name = product.name;       
-        this.model = product.model;     
+        this.model = product.model;
+        this.img = product.img;   
         this.price = product.price;     
         this.id = product.id;           
-        this.descuento = product.descuento;     
+        this.descuento = product.descuento; 
+        this.descripcion = product.descripcion;    
     }
 
     /* Getters */
@@ -68,13 +71,14 @@ export class producto{
         this.descuento = desc;
     }
 
-    udate(name, model, img, price, id ,desc){
+    udate(name, model, img, price, id ,desc, descripcion){
         this.name == name;
         this.model = model;
         this.img = img;
         this.price = price;
         this.id = id;
         this.descuento = desc;
+        this.descripcion = descripcion;
     }
     
 

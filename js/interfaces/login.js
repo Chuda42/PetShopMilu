@@ -190,3 +190,7 @@ export const getUserFromStorage = (email) => {
 export const deleteRegistro = () => {
     localStorage.removeItem("RegistroUser")
 }
+
+export const logout = () => {
+    localStorage.setItem(`userIN`, JSON.stringify(0));
+}

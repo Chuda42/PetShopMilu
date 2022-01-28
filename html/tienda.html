@@ -36,10 +36,15 @@
             <nav class ="barraNav-main">
                 <a href="../index.html"><i class = "fas fa-paw"></i> </a>
                 <ul>
-                    <li><i class="fas fa-cat"></i><a href="./html/EnMantenimiento.html"> Nosotros</a></li>
-                    <li><i class="fas fa-address-book"></i><a href="./html/EnMantenimiento.html">Agenda</a></li>
-                    <li class = "htmlIn"><i class="fas fa-store"></i><a href="./html/EnMantenimiento.html">Tienda</a></li>
-                    <li><i class="fas fa-dog"></i><a href="./html/login.html">Login  </a></li>
+                    <li><i class="fas fa-cat"></i><a href="../html/EnMantenimiento.html"> Nosotros</a></li>
+                    <li><i class="fas fa-address-book"></i><a href="../html/EnMantenimiento.html">Agenda</a></li>
+                    <li class = "htmlIn"><i class="fas fa-store"></i><a href="../html/EnMantenimiento.html">Tienda</a></li>
+                    <!-- Se muestra cuando nadie esta logueado -->
+                    <li id ="pag-login"><i class="fas fa-dog"></i><a href="../html/login.html">Login</a></li>
+                    <li id ="pag-carrito-login"><a href="../html/login.html"><i class="fas fa-shopping-cart"></i></a></li>
+                    <!-- se muestra cuando hay alguien logueado -->                
+                    <li id ="pag-logout"><i class="fas fa-dog"></i><a id="logout-button" href="../index.html">Logout</a></li>
+                    <li id ="pag-carrito"><a id ="pag-carrito-entrar" href="../html/carrito.html"><i class="fas fa-shopping-cart"></i></a></li>
                 </ul>
             </nav>
         </div>
@@ -56,14 +61,63 @@
             </div>
             <div class ="store-stock">
 
-            </div>
+                <!-- Producto de muestra 1 -->
+                <div class="producto-card">
+                    <div class="producto-card-img">
+                        <img src="../media/img/comida_frost.png" alt="Producto-1">
+                    </div>
+                    <div class="producto-card-info">
+                        <ul>
+                            <li><h4>Nombre:</h4>Comida</li>
+                            <li><h4>Modelo:</h4> FrostSenior</li>
+                            <li><h4>Descripcion:</h4> Comida de alta calidad </li>
+                            <li><h4>Precio:</h4> 900</li>
+                            <li><h4>Descuento:</h4> 15%</li>
+                        </ul>
+                    </div>
+                    <div class="producto-card-botonAgregarCarrito">
+                        <button id ="AgregarProducto-store-1">Agregar al Carrito</button>
+                    </div>
+                </div>
+
+                <!-- Producto de muestra 2 -->
+                <div class="producto-card">
+                    <div class="producto-card-img">
+                        <img src="../media/img/collarDominalRosa.png" alt="Producto-2">
+                    </div>
+                    <div class="producto-card-info">
+                        <ul>
+                            <li><h4>Nombre:</h4>Collar</li>
+                            <li><h4>Modelo:</h4> DominalRosa</li>
+                            <li><h4>Descripcion:</h4> Collar anti pulgas de alta calidad, tamaño grande </li>
+                            <li><h4>Precio:</h4> 1555</li>
+                            <li><h4>Descuento:</h4> 15%</li>
+                        </ul>
+                    </div>
+                    <div class="producto-card-botonAgregarCarrito">
+                        <button id ="AgregarProducto-store-2">Agregar al Carrito</button>
+                    </div>
+                </div>
+
+
+            </div><!-- stock -->
+
         </div>
     
    </div><!-- Fin contenedor -->
 
+   <footer><!-- footer -->
+    <ul>
+        <li><a href="#"><i class = "fab fa-facebook"></i>Facebook</a></li>
+        <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+        <li><a href="#"><i class="fab fa-whatsapp"></i>Whatsapp</a></li>
+    </ul>
+    <h5><i class= "far fa-copyright"></i>2021</h5>
+    </footer><!-- Fin footer -->
 
 
    <!-- Scripts -->
-   <script src ="../index.js" type ="module"></script>
+   <script src = "../js/lib/jquery.min.js"></script>
+   <script src ="../js/handlers/handlerTienda.js" type ="module"></script>
 </body>
 </html>

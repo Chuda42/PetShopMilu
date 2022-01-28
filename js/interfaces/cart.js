@@ -44,7 +44,23 @@ export const getCarrito = ()=>{
 Precondición hay un carrito en el storage*/
 export const setCompraCarritoSTORAGE = (compra) =>{
     let cart = getCarrito();
-    cart.agregarCompra(compra);
+    let indice = 0;
+    let auxiliar = cart.compra;
+    let auxiliarBool = false;
+    for (let i = 0; i < auxiliar.length; i++) {
+        if (auxiliar[i].product.name == compra.product.name){
+            indice = i;
+            auxiliarBool = true;
+            break;
+        }
+    }
+    if (!auxiliarBool){
+        cart.agregarCompra(compra)
+    }else{
+        cart.compra[indice].cant+= 1;
+        cart.compra[indice].updateMonto(cart.compra[indice].cant)
+        cart.monto+= compra.monto;
+    }
     localStorage.setItem("carrito", JSON.stringify(cart));
 }
 
@@ -130,17 +146,21 @@ export const setCompraCarritoHTML = (nodo, compra) =>{
     Importante hacerlo cuando se crea la etiqueta para que haga efecto
     con cada una nueva creada */
     document.querySelector(`#izq${id}`).addEventListener('click', (event) =>{
-        let idizq = getIdCompra(event.target.id);
-        let carrito = getCarrito();
-        carrito.compra.map(element => {
-            if (element.id == idizq){
-                element.cant = element.cant - 1;
-                element.updateMonto(element.cant)
-                carrito.updateMonto(-1*element.product.price);
-                localStorage.setItem("carrito", JSON.stringify(carrito));
-                actualizarHtml(id, "izq");
-            }  
-        })
+        let cant = document.querySelector(`#can${id}`).textContent;
+        cant = parseInt(cant);
+        if (cant != 1 ){
+            let idizq = getIdCompra(event.target.id);
+            let carrito = getCarrito();
+            carrito.compra.map(element => {
+                if (element.id == idizq){
+                    element.cant = element.cant - 1;
+                    element.updateMonto(element.cant)
+                    carrito.updateMonto(-1*element.product.price);
+                    localStorage.setItem("carrito", JSON.stringify(carrito));
+                    actualizarHtml(id, "izq");
+                }  
+            })
+        }//if
     })
     document.querySelector(`#der${id}`).addEventListener('click', (event) =>{
         let idder = getIdCompra(event.target.id);
@@ -169,18 +189,16 @@ export const setCompraCarrito = (producto) =>{
     setCompraCarritoSTORAGE(compra1);
 }
 
-/* funcion que suma o resta productos con las flechitas */
-//key indica si es la flechita derecha o la izquierda
-export const cantFlchitas = (key) => {
-    if (key == "derecha"){
-
-    }
-}
 
  /* dado el id de las etiquetas saca el id de la compra */
 export const getIdCompra = (id) =>{
-    let resultado = parseInt(id[id.length - 1]);
-    return resultado;
+    let resultado =  0;
+    for (let i = 0; i < id.length; i++) {
+        if ( !isNaN(parseInt(id[i]))){
+            resultado  = resultado + id[i];
+        }
+    }
+    return parseInt(resultado);
 }
 
 /* actualiza el html de las flechas si la key es izquierda resta 1 si es derecha suma 1 */

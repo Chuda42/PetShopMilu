@@ -39,7 +39,14 @@
                     <li><i class="fas fa-cat"></i><a href="./html/carrito.html"> Nosotros</a></li>
                     <li><i class="fas fa-address-book"></i><a href="./html/EnMantenimiento.html">Agenda</a></li>
                     <li><i class="fas fa-store"></i><a href="./html/tienda.html">Tienda</a></li>
-                    <li><i class="fas fa-dog"></i><a href="./html/login.html">Login  </a></li>
+                    <!-- Se muestra cuando nadie esta logueado -->
+                    <li id ="pag-login"><i class="fas fa-dog"></i><a href="./html/login.html">Login</a></li>
+                    <li id ="pag-carrito-login"><a href="./html/login.html"><i class="fas fa-shopping-cart"></i></a></li>
+                    <!-- se muestra cuando hay alguien logueado -->                
+                    <li id ="pag-logout"><i class="fas fa-dog"></i><span id = "logout-button">Logout</span></li>
+                    <li id ="pag-carrito"><a href="./html/carrito.html"><i class="fas fa-shopping-cart"></i></a></li>
+
+
                 </ul>
             </nav>
         </div>
@@ -114,6 +121,7 @@
 
 
     <!-- Enlaces js -->
+    <script src = "./js/lib/jquery.min.js"></script>
     <script src ="index.js" type = "module"></script>
     <script src ="./js/animaciones.js"></script>
 </body>
