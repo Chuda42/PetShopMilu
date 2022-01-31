@@ -88,7 +88,7 @@ li{
 .contenedor-register{
     background-color: #f5950fcc;
     width: 650px;
-    height: 600px;
+    min-height: 600px;
     margin-top: 70px;
     border-radius: 50px 50px 50px 50px;
     display:flex;
@@ -102,8 +102,31 @@ li{
     font-size: 20px;
 }
 
+.contenedor-register h5{
+    color: red;
+    font-size:20px
+}
+
+.contenedor-register span{
+    color: red;
+    font-size:20px;
+    margin-left: 5px;
+}
+
 .contenedor-register ul li h3{
     font-size: 25px;
+}
+
+#contraseña-no-coinciden{
+    font-size: 40px;
+    transform: translateY(10px);
+    color: rgb(212, 8, 8);
+}
+
+#contraseña-coinciden{
+    font-size: 40px;
+    transform: translateY(10px);
+    color: rgb(9, 194, 9);
 }
 
 .contenedor-register ul li input{

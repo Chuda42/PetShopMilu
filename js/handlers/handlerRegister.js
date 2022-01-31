@@ -1,6 +1,15 @@
 /* IMPORTACIONES */
 import{user} from '../clase/user.js'
 import * as LOGIN from '../interfaces/login.js'
+const {jQuery} = window.jQuery;
+const $ = window.jQuery;
+
+/* Main */
+$(".contenedor-register h5").hide();
+$("#contraseña-no-coinciden").hide();
+$("#contraseña-coinciden").hide();
+$(".contenedor-register .mensaje-no-coinciden").hide();
+$(".contenedor-register span").hide();
 
 
 /* Registrarse con los input */
@@ -12,24 +21,43 @@ registrarse.addEventListener("click", () =>{
     let passConfirm = document.querySelector("#input-register-pass-confirm").value;
     
     if(nombre == "" || email == "" || pass == ""){
-        alert("No se pudo registrar al usuario porque dejo campos vacios");
+        $(".contenedor-register span").show();
+        $(".contenedor-register .mensaje-no-coinciden").hide();
+        setTimeout(() => {
+            $(".contenedor-register span").hide();
+        }, 2500);
         /* Reseteo los campos */
         document.querySelector("#input-register-name").value         = null;
         document.querySelector("#input-register-email").value        = null;
         document.querySelector("#input-register-pass").value         = null;
         document.querySelector("#input-register-pass-confirm").value = null;
     }else if(pass != passConfirm){
-        alert("Las contraseñas no coinciden");
+        $(".contenedor-register .mensaje-no-coinciden").show();
+        setTimeout(() => {
+            $(".contenedor-register .mensaje-no-coinciden").hide();
+        }, 2500);
         /* Reseteo los campos de las contra */
         document.querySelector("#input-register-pass").value         = null;
         document.querySelector("#input-register-pass-confirm").value = null;
     }else{
         LOGIN.registrarNewUser(nombre, email, pass, passConfirm);
     }
-
+    $("#contraseña-coinciden").hide();
+    $("#contraseña-no-coinciden").hide();
 });
+
 document.addEventListener(`keydown`, (event) => {
     if (event.key == "Enter"){
         registrarse.click();
     }
 });
+
+$("#input-register-pass-confirm").on("keyup", (event) => {
+    if(event.target.value != document.querySelector("#input-register-pass").value){
+        $("#contraseña-no-coinciden").show();
+        $("#contraseña-coinciden").hide();
+    }else{
+        $("#contraseña-no-coinciden").hide();
+        $("#contraseña-coinciden").show();
+    }
+})

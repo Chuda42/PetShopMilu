@@ -25,20 +25,23 @@
             <form>
                 <ul>
                     <li>
-                        <h3>Nombre y apellido</h3>
+                        <h3>Nombre y apellido <span>*Campo Requerido</span></h3>
                         <input type="text" placeholder="Nombre y apellido" class="input-register" id ="input-register-name" autocomplete="off">
                     </li>
                     <li>
-                        <h3>Email</h3>
+                        <h3>Email <span>*Campo Requerido</span></h3>
                         <input type="email" placeholder="Email" class="input-register" id="input-register-email" autocomplete="off">
                     </li>
                     <li>
-                        <h3>Contraseña</h3>
+                        <h3>Contraseña <span>*Campo Requerido</span></h3>
+                        <h5 class="mensaje-no-coinciden">*Las contraseas no coinciden</h5>
                         <input type="password" placeholder="Contraseña" class="input-register" id ="input-register-pass" autocomplete="off">
                     </li>
                     <li>
-                        <h3>Confirmar contraseña</h3>
+                        <h3>Confirmar contraseña <span>*Campo Requerido</span></h3>
+                        <h5 class="mensaje-no-coinciden">*Las contraseas no coinciden</h5>
                         <input type="password" placeholder="Confirmar contraseña" class="input-register" id="input-register-pass-confirm" autocomplete="off">
+                        <i id="contraseña-no-coinciden" class= "fas fa-times"></i><i id="contraseña-coinciden" class= "fas fa-check"></i>
                     </li>
                 </ul>
             </form>
@@ -50,7 +53,7 @@
     </div>
 
     <!-- Scripts -->
-    <script src ="../index.js" type = "module"></script>
+    <script src = "../js/lib/jquery.min.js"></script>
     <script src ="../js/handlers/handlerRegister.js" type ="module"></script>
 </body>
 </html>
