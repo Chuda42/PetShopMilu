@@ -16,7 +16,7 @@ LOGIN.initUserIn();
 
 
 
-/* Arreglo de la barra de navegación */
+// Arreglo de la barra de navegación
 if(LOGIN.hayUserIn()){
     CART.initCarritoSTORAGE();
 
@@ -39,10 +39,33 @@ if(LOGIN.hayUserIn()){
     
 }
 
-/* Logout */
+// evento logout 
 document.querySelector("#logout-button").addEventListener("click", () => {
     LOGIN.logout();
 })
 
-
+// Evento si abren el login en otra ventana
+$(window).on("storage", ()=>{
+    if(LOGIN.hayUserIn()){
+        CART.initCarritoSTORAGE();
+    
+        /* Se ve */
+        $("#pag-logout").show();
+        $("#pag-carrito").show();
+    
+        /* No se ve */
+        $("#pag-carrito-login").hide();
+        $("#pag-login").hide()
+    
+    }else{
+        /* Se ve */
+        $("#pag-carrito-login").show();
+        $("#pag-login").show()
+        /* No se ve */
+        $("#pag-logout").hide();
+        $("#pag-carrito").hide();
+    
+        
+    }
+})
 

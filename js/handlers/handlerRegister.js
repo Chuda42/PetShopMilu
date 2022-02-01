@@ -4,7 +4,9 @@ import * as LOGIN from '../interfaces/login.js'
 const {jQuery} = window.jQuery;
 const $ = window.jQuery;
 
-/* Main */
+/* MAIN */
+
+//vista inicial
 $(".contenedor-register h5").hide();
 $("#contraseña-no-coinciden").hide();
 $("#contraseña-coinciden").hide();
@@ -12,7 +14,7 @@ $(".contenedor-register .mensaje-no-coinciden").hide();
 $(".contenedor-register span").hide();
 
 
-/* Registrarse con los input */
+// ingreso de datos por input form
 let registrarse = document.querySelector(".contenedor-register-boton")
 registrarse.addEventListener("click", () =>{
     let nombre = document.querySelector("#input-register-name").value;
@@ -46,12 +48,14 @@ registrarse.addEventListener("click", () =>{
     $("#contraseña-no-coinciden").hide();
 });
 
+// Evento que tambien perminte dar enter para registrar
 document.addEventListener(`keydown`, (event) => {
     if (event.key == "Enter"){
         registrarse.click();
     }
 });
 
+//Eventeo de control si la confirmación de la contraseña esta bien
 $("#input-register-pass-confirm").on("keyup", (event) => {
     if(event.target.value != document.querySelector("#input-register-pass").value){
         $("#contraseña-no-coinciden").show();

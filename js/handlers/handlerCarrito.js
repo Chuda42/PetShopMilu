@@ -11,4 +11,3 @@ CART.initCarritoHTML(document.querySelector(".carrito-contenedor-compras")
 document.querySelector("#logout-button").addEventListener("click", () => {
     LOGIN.logout();
 })
-

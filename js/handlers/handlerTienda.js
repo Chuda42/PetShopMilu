@@ -62,3 +62,28 @@ document.querySelector("#AgregarProducto-store-2").addEventListener("click", () 
         document.querySelector("#login-entrar").click();
     }
 })
+
+// evento si abre el login en otra ventana
+$(window).on("storage", ()=>{
+    if(LOGIN.hayUserIn()){
+        CART.initCarritoSTORAGE();
+    
+        /* Se ve */
+        $("#pag-logout").show();
+        $("#pag-carrito").show();
+    
+        /* No se ve */
+        $("#pag-carrito-login").hide();
+        $("#pag-login").hide()
+    
+    }else{
+        /* Se ve */
+        $("#pag-carrito-login").show();
+        $("#pag-login").show()
+        /* No se ve */
+        $("#pag-logout").hide();
+        $("#pag-carrito").hide();
+    
+        
+    }
+})

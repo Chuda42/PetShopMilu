@@ -2,6 +2,9 @@
 import * as LOGIN from '../interfaces/login.js'
 
 
+/* MAIN */
+
+// ingreso de entradas y login mediante input de un form
 let loginV = document.querySelector(".contenedor-login-boton");
 loginV.addEventListener("click", () => {
     let email = document.querySelector("#input-login-email").value;
