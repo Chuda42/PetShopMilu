@@ -3,6 +3,7 @@ import {compra} from '../clase/compra.js'
 import {producto} from '../clase/producto.js'
 import * as LOGIN from '../interfaces/login.js'
 import * as CART from  '../interfaces/cart.js' 
+import * as STORE from '../interfaces/store.js'
 
 const {jQuery} = window.jQuery;
 const $ = window.jQuery;
@@ -87,3 +88,5 @@ $(window).on("storage", ()=>{
         
     }
 })
+
+STORE.agregarTrjetaProducto(producto1, document.querySelector(".store-stock"));
