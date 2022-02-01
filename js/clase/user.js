@@ -9,7 +9,7 @@ export class user{
         this.email     = email;     //string
         this.id        = id;        //int - int
         this.billetera = 0;         //int, saldo de la billetera   
-        this.historial = [];        //Lista de tipo factura
+        this.historial = [];        //Carrito, guarda el ultimo carrito
         this.active    = false;     //indica si el usuario esta logeado (booleano)
 
     }
@@ -109,9 +109,9 @@ export class user{
         this.billetera = monto;
     }
     
-    //agrega un nuevo objeto factura a this.historial
-    pushFactura(factura){
-        this.historial.push(factura);
+    //agrega un nuevo objeto carrito a this.historial
+    saveCarrito(carrito){
+        this.historial = carrito;
     }
 
     /* Funcion hash */

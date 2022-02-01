@@ -41,6 +41,7 @@ if(LOGIN.hayUserIn()){
 
 // evento logout 
 document.querySelector("#logout-button").addEventListener("click", () => {
+    
     LOGIN.logout();
 })
 
