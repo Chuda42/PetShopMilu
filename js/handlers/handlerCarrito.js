@@ -11,3 +11,12 @@ CART.initCarritoHTML(document.querySelector(".carrito-contenedor-compras")
 document.querySelector("#logout-button").addEventListener("click", () => {
     LOGIN.logout();
 })
+
+$(`h5`).on("click", ()=>{
+    $("#totalMonto-num").text(CART.getCarrito().monto)
+
+});
+
+$(`#plusBtn`).on(`mouseenter`, (event)=>{
+    /* hacer una animación */
+})

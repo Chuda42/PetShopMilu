@@ -5,6 +5,9 @@ import {producto} from '../clase/producto.js';
 import {compra} from '../clase/compra.js';
 import * as LOGIN from './login.js';
 
+const {jQuery} = window.jQuery;
+const $ = window.jQuery;
+
 
 /* Funciones */
 
@@ -124,6 +127,11 @@ export const setCompraCarritoHTML = (nodo, compra) =>{
     i2.id = `der${compra.id}`
     divCant.appendChild(i1);
     divCant.appendChild(i2);
+    /* Boton remove */
+    let divCantH5 = document.createElement('h5');
+    divCantH5.textContent = `Remove`;
+    divCantH5.id = `remove${compra.id}`;
+    divCant.appendChild(divCantH5);
 
     /* Precio */
     let divPrecio = document.createElement('div');
@@ -160,7 +168,10 @@ export const setCompraCarritoHTML = (nodo, compra) =>{
                     actualizarHtml(id, "izq");
                 }  
             })
-        }//if
+        }else{
+            actualizarHtml(id, "izq");
+            document.querySelector(`#remove${compra.id}`).click();
+        }
     })
     document.querySelector(`#der${id}`).addEventListener('click', (event) =>{
         let idder = getIdCompra(event.target.id);
@@ -175,6 +186,14 @@ export const setCompraCarritoHTML = (nodo, compra) =>{
             }
         })
     })
+
+    document.querySelector(`#remove${compra.id}`).addEventListener(`click`, (event)=>{
+        removeItemCarrito(getIdCompra(event.target.id));
+        /* Lo remueve del html */
+        $(`#com${compra.id}`).fadeOut(1000);
+
+    })
+
 }
 
 export const udatePrecioHTML =(nodo, precio) => {
@@ -223,4 +242,14 @@ export const actualizarHtml = (id, key) =>{
         document.querySelector(`#pre${id}`).textContent = `${newPre}`;
     } 
     document.querySelector("#totalMonto-num").textContent = total;
+}
+
+/* Lo remueve del strorage */
+export const removeItemCarrito = (id) => {
+    let carrito = getCarrito();
+    let montoCompra = carrito.compra.find(element => element.id == id)
+    let newCarrito = carrito.compra.filter(element => element.id != id);
+    carrito.compra = newCarrito;
+    carrito.updateMonto(-montoCompra.monto);
+    localStorage.setItem(`carrito`, JSON.stringify(carrito));
 }
