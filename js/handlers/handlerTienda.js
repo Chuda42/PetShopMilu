@@ -89,4 +89,6 @@ $(window).on("storage", ()=>{
     }
 })
 
+console.log(new stock().stock);
+
 STORE.agregarTrjetaProducto(producto1, document.querySelector(".store-stock"));

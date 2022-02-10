@@ -1,0 +1,24 @@
+[
+    {
+        "name"  : "nombre",
+        "model" : "modelo",
+        "img"   : "img",
+        "price" : "precio",
+        "id"    : "id",
+        "descuento": "descuento",
+        "descripcion": "descripcion"
+    },
+    {
+        "name"  : "nombre2",
+        "model" : "modelo2",
+        "img"   : "img2",
+        "price" : "precio2",
+        "id"    : "id2",
+        "descuento": "descuento2",
+        "descripcion": "descripcion2"
+    }
+
+    
+]
+    
+    

@@ -1,4 +1,4 @@
-export class producto{
+ export  class producto{
     constructor(name, model, img, price, id, descripcion){
         this.name = name;       
         this.model = model;

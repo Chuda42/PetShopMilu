@@ -17,6 +17,48 @@ $(`h5`).on("click", ()=>{
 
 });
 
-$(`#plusBtn`).on(`mouseenter`, (event)=>{
+$(`#plusBtn`).on(`mouseenter`, ()=>{
     /* hacer una animación */
+    $(`#plusBtn`).animate({
+        top: '-20px',
+    }, 200)
+    .animate({
+        top: '0px',
+    }, 200)
+    .animate({
+        top: '-15px',
+    }, 200)
+    .animate({
+        top: '0px',
+    }, 200)
+    .animate({
+        top: '-10px',
+    }, 200)
+    .animate({
+        top: '0px',
+    }, 200)
+    .animate({
+        top: '-5px',
+    }, 200)
+    .animate({
+        top: '0px',
+    }, 200)
+    .stop();
 })
+
+$(`#carrito-comprar-btn-div`).on(`mouseenter`, ()=>{
+    /* hacer una animación */
+    $(`#carrito-comprar-btn-div`).animate({
+        top: '-10px',
+    }, 200)
+    .animate({
+        top: '0px',
+    }, 200)
+    .animate({
+        top: '-5px',
+    }, 200)
+    .animate({
+        top: '0px',
+    }, 200) 
+})
+

@@ -30,6 +30,7 @@
 }
 
 .carrito-contenedor-total-btn{
+    position: relative;
     display:flex;
     justify-content: center;
     margin: 10px;
@@ -43,10 +44,17 @@
 }
 
 
-.carrito-contenedor-boton i{
+.carrito-contenedor-boton {
     display: flex;
     justify-content: center;
     min-width: 100%;
+    font-size: 50px;
+    margin: 20px
+}
+
+.carrito-contenedor-boton i {
+    display: flex;
+    position: relative;
     font-size: 50px;
     margin: 20px
 }
