@@ -1,6 +1,7 @@
 /* importaciones */
 import {compra} from '../clase/compra.js'
 import {producto} from '../clase/producto.js'
+import{stock} from '../clase/stock.js'
 import * as LOGIN from '../interfaces/login.js'
 import * as CART from  '../interfaces/cart.js' 
 import * as STORE from '../interfaces/store.js'
@@ -13,6 +14,9 @@ const $ = window.jQuery;
 /* Stock */
 const producto1 = new producto("Comida", "FrostSenior", "../media/img/comida_frost.png", 900, 1, "Comida de perro de alta calidad")
 const producto2 = new producto("Collar", "DominalRosa", "../media/img/collarDominalRosa.png", 1555, 2, "collar anti pulgas de alta calidad, tamaño grande")
+
+
+
 
 
 /* Fin de stock */
@@ -39,31 +43,6 @@ document.querySelector("#logout-button").addEventListener("click", () => {
 })
 
 
-
-
-
-/* Esto se tiene que generar automatico para cada producto */
-document.querySelector("#AgregarProducto-store-1").addEventListener("click", () => {
-    if(LOGIN.hayUserIn()){
-        let compra1 = new compra(producto1, 1);
-        CART.setCompraCarritoSTORAGE(compra1);
-        document.getElementById("pag-carrito-entrar").click()
-    }else{
-        document.querySelector("#login-entrar").click();
-    }
-    
-})
-
-document.querySelector("#AgregarProducto-store-2").addEventListener("click", () => {
-    if(LOGIN.hayUserIn()){
-        let compra2 = new compra(producto2, 1);
-        CART.setCompraCarritoSTORAGE(compra2);
-        document.getElementById("pag-carrito-entrar").click()
-    }else{
-        document.querySelector("#login-entrar").click();
-    }
-})
-
 // evento si abre el login en otra ventana
 $(window).on("storage", ()=>{
     if(LOGIN.hayUserIn()){
@@ -89,6 +68,14 @@ $(window).on("storage", ()=>{
     }
 })
 
-console.log(new stock().stock);
+const stock1 = new stock()
 
-STORE.agregarTrjetaProducto(producto1, document.querySelector(".store-stock"));
+stock1.agregarTarjetasHTML($("#store-stock"))
+console.log($(`#AgregarProducto-store-2`));
+console.log($(`#AgregarProducto-store-3`));
+
+
+
+
+
+//STORE.agregarTrjetaProducto(producto1, document.querySelector(".store-stock"));

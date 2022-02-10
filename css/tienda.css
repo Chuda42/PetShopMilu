@@ -40,6 +40,7 @@
     border: 1px solid black;
     border-radius:20px;
     background-color: #f7ad46dc;
+    margin-bottom: 15px;
 }
 
 .producto-card-img{
@@ -48,7 +49,9 @@
     justify-content:center;
 }
 .producto-card-img img{
-    width: 150px
+    max-width: 150px;
+    max-height: 200px;
+    
 }
 
 .producto-card li {

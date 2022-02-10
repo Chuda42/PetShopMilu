@@ -1,24 +1,460 @@
-[
-    {
-        "name"  : "nombre",
-        "model" : "modelo",
-        "img"   : "img",
-        "price" : "precio",
-        "id"    : "id",
-        "descuento": "descuento",
-        "descripcion": "descripcion"
-    },
-    {
-        "name"  : "nombre2",
-        "model" : "modelo2",
-        "img"   : "img2",
-        "price" : "precio2",
-        "id"    : "id2",
-        "descuento": "descuento2",
-        "descripcion": "descripcion2"
-    }
+{
+    "stock" :[
+        {
+            "name"  : "Comida",
+            "model" : "FrostSenior",
+            "img"   : "../media/img/comida_frost.png",
+            "price" : 900,
+            "id"    : 1,
+            "descuento": 15,
+            "descripcion": "comida de alta calidad"
+        },
+        {
+            "name"  : "Collar",
+            "model" : "DominalRosa",
+            "img"   : "../media/img/collarDominalRosa.png",
+            "price" : 200,
+            "id"    : 2,
+            "descuento": 15,
+            "descripcion": "Collar anti pulgas de alta calidad, tamaño grande"
+        },
+        {
+            "name"    : "Acondicionador",
+            "model"  : "Spray",
+            "img"    : "../media/img/3.jpg",
+            "price"  : 300,
+            "id"     : 3,
+            "descuento": 0,
+            "descripcion": "Acondicionador facilitador de desenriedo"
+        },
+        {
+            "name" : "Acondicionador",
+            "model" : "Hidratante",
+            "img" : "../media/img/4.jpg",
+            "price" : 370,
+            "id" : 4,
+            "descuento": 0,
+            "descripcion": "Hidrata la piel y pelos de su mascota de manera más facil"
+        },
+        {
+            "name" :"Acondicionador",
+            "model" : "Cremoso",
+            "img" : "../media/img/5.png",
+            "price" : 359,
+            "id" : 5,
+            "descuento": 0,
+            "descripcion": "Hace espuma de manera más facil y le aporta la comodidad que su mascota desea"
+        },
+        {
+            "name" : "Shampoo",
+            "model" : "Spray",
+            "img" : "../media/img/6.jpg",
+            "price" : 270,
+            "id" : 6,
+            "descuento": 0,
+            "descripcion": "Deja a su mascota con un perfume exquisito"
+        },
+        {
+            "name" : "Shampoo",
+            "model" : "Cremoso",
+            "img" : "../media/img/7.jpg",
+            "price" : 290,
+            "id" : 7,
+            "descuento": 0,
+            "descripcion": "Aporta comodidad, facilidad y cuidados a su mascota"
+        },
+        {
+            "name" : "Shampoo",
+            "model" :"Hidratante",
+            "img" : "../media/img/8.png",
+            "price" : 350,
+            "id" : 8,
+            "descuento": 0,
+            "descripcion": "Hidrata a su mascota y previene de cualquier tipo de malestar"
+        },
+        {
+            "name" : "Colonia",
+            "model" :"Neutralizador de olores",
+            "img" : "../media/img/9.jpg",
+            "price" :459,
+            "id" : 9,
+            "descuento": 0,
+            "descripcion": "Neutraliza todo tipo de olor malo que su mascota pueda obtener y además le aporata rico olor"
+        },
+        {
+            "name" : "Colonia",
+            "model" : "Spray",
+            "img" : "../media/img/10.jpg",
+            "price" : 259,
+            "id" : 10,
+            "descuento": 0,
+            "descripcion": "Brinda facilidad y mantiene a su mascota perfumada durante varios días"
+        },
+        {
+            "name" : "Antiparásito",
+            "model" : "Comprimido",
+            "img" : "../media/img/11.gif",
+            "price" : 459,
+            "id" : 11,
+            "descuento": 0,
+            "descripcion":"Medicamento antiparásito en forma de comprimido para que su mascota este más comoda"
+        },
+        {
+            "name" : "Antiparásito",
+            "model" : "Jarabe",
+            "img" : "../media/img/12.png",
+            "price" : 550,
+            "id" : 12,
+            "descuento": 0,
+            "descripcion": "Antiparasito más practico y comodo"
+        },
+        {
+            "name" : "Cama",
+            "model" : "Antiestrés",
+            "img" : "../media/img/13.jpg",
+            "price" : 759,
+            "id" : 13,
+            "descuento": 0,
+            "descripcion":"Le brinda a su mascota comodidad, y felicidad al momento de descansar"
+        },
+        {
+            "name" : "Cama redonda",
+            "model" :"Tradicional",
+            "img" : "../media/img/14.jpg",
+            "price" : 399,
+            "id" : 14,
+            "descuento": 0,
+            "descripcion":"Cama comoda para su mascota ya sea grande o pequeño"
+        },
+        {
+            "name" : "Cama cuadrada",
+            "model" :"Tradicional",
+            "img" : "../media/img/15.jpg",
+            "price" : 499,
+            "id" : 15,
+            "descuento": 0,
+            "descripcion":"Cama que aporta a su mascota la comodidad que desea, ya sea grande o pequeño"
+        },
+        {
+            "name" : "Baño sanitario",
+            "model" : "Bandeja sesped",
+            "img" : "../media/img/16.jpg",
+            "price" : 795,
+            "id" : 16,
+            "descuento": 0,
+            "descripcion": " Baño sanitario que se adapta a cualquier espacio, producto Facil, practico"
+        },
+        {
+            "name" : "Paños de entrenamiento",
+            "model" : "Adeshivo",
+            "img" : "../media/img/17.jpg",
+            "price" : 690,
+            "id" : 17,
+            "descuento": 0,
+            "descripcion":"Le brinda a su mascota comodidad al momento de hacer sus necesidades"
+        },
+        {
+            "name" : "Cepillo ",
+            "model" : "Expulsador de pelusa",
+            "img" : "../media/img/18.jpg",
+            "price" : 200,
+            "id" : 18,
+            "descuento": 0,
+            "descripcion":"Cepillo que expulsa pelusas de su mascota al instante"
+        },
+        {
+            "name" : "Cepillo mata pulgas",
+            "model" : "Electrico",
+            "img" : "../media/img/19.jpg",
+            "price" : 499,
+            "id" : 19,
+            "descuento": 0,
+            "descripcion":"Le brinda la facilidad que tanto desea al momento de peinar a su mascota"
+        },
+        {
+            "name" : "Cepillo quita nudos",
+            "model" :"Electrico",
+            "img" : "../media/img/20.jpg",
+            "price" : 399,
+            "id" : 20,
+            "descuento": 0,
+            "descripcion":"Desenrieda y quita nudos al pelo de su mascota sea de raza pequeña o grande"
+        },
+        {
+            "name" : "Bolso transportador",
+            "model" : "Ajustable",
+            "img" : "../media/img/21.jpg",
+            "price" : 559,
+            "id" : 21,
+            "descuento": 0,
+            "descripcion":"Bolso que al ser ajustable procura y le brinda comodidad al momento de cargar a su mascota"
+        },
+        {
+            "name" : "Bolso transportador",
+            "model" : "Mochila con ruedas",
+            "img" : "../media/img/22.jpg",
+            "price" : 600,
+            "id" : 22,
+            "descuento": 0,
+            "descripcion":"Le brinda la facilidad que esperaba al momento de cargar su mascota"
+        },
+        {
+            "name" : "Bolso transportador",
+            "model" : "Ampleable",
+            "img" : "../media/img/23.jpg",
+            "price" : 490,
+            "id" : 23,
+            "descuento": 0,
+            "descripcion":"Bolso ampleador, le permite a su mascota que este comoda, para todo tipo de raza"
+        },
+        {
+            "name" : "Bozal",
+            "model" :"Ajustable anti ladrar",
+            "img" : "../media/img/24.jpg",
+            "price" : 179,
+            "id" : 24,
+            "descuento": 0,
+            "descripcion":"Cumple objetivo de no permitir que su mascota ladre"
+        },
+        {
+            "name" : "Bozal",
+            "model" : "Hocico corto ajustable",
+            "img" : "../media/img/25.jpg",
+            "price" : 200,
+            "id" : 25,
+            "descuento": 0,
+            "descripcion":"Lo que esperaba llego, bozal para razas con hocico corto, le permite ajustar como usted guste"
+        },
+        {
+            "name" : "Bozal",
+            "model" : "Canastilla",
+            "img" : "../media/img/26.jpg",
+            "price" : 150,
+            "id" : 26,
+            "descuento": 0,
+            "descripcion":"Bozal practico y comodo"
+        },
+        {
+            "name" : "Collar",
+            "model" :"Antiparasitario",
+            "img" : "../media/img/27.jpeg",
+            "price" : 500,
+            "id" : 27,
+            "descuento": 0,
+            "descripcion":"Permite que su mascota este protegido"
+        },
+        {
+            "name" : "Collar",
+            "model" : "Antipulgas",
+            "img" : "../media/img/28.jpg",
+            "price" : 499,
+            "id" : 28,
+            "descuento": 0,
+            "descripcion":"Nunca más pulgas, permite comodidad y protección"
+        },
+        {
+            "name" : "Collar",
+            "model" : "Identificador",
+            "img" : "../media/img/29.jpg",
+            "price" : 439,
+            "id" : 29,
+            "descuento": 0,
+            "descripcion":"Identificador de mascota con su nombre"
+        },
+        {
+            "name" : "Arnes ajustable",
+            "model" : "Perros pequeños",
+            "img" : "../media/img/30.jpg",
+            "price" : 399,
+            "id" : 30,
+            "descuento": 0,
+            "descripcion":"Arnes para perros de razas pequeñas"
+        },
+        {
+            "name" : "Arnes ajustable",
+            "model" :"Personalizable",
+            "img" : "../media/img/31.jpg",
+            "price" : 300,
+            "id" : 31,
+            "descuento": 0,
+            "descripcion":"Arnes personalizados, con nombre y si gusta numero de contacto"
+        },
+        {
+            "name" : "Arnes ajustable",
+            "model" :"Chaleco",
+            "img" : "../media/img/32.jpg",
+            "price" : 350,
+            "id" : 32,
+            "descuento": 0,
+            "descripcion":"Arnes ajustable, le brinda la seguridad que esperaba"
+        },
+        {
+            "name" : "Correa",
+            "model" : "Extensible",
+            "img" : "../media/img/33.jpg",
+            "price" : 399,
+            "id" : 33,
+            "descuento": 0,
+            "descripcion":"Permite que su mascota este asegurado sin presión"
+        },
+        {
+            "name" : "Correa",
+            "model" :"Personalizada",
+            "img" : "../media/img/34.jpg",
+            "price" : 490,
+            "id" : 34,
+            "descuento": 0,
+            "descripcion":"Correa con nombre de su mascota y numero de contacto"
+        },
+        {
+            "name" : "Correa",
+            "model" :"Tradicional cinta",
+            "img" : "../media/img/35.jpg",
+            "price" : 290,
+            "id" : 35,
+            "descuento": 0,
+            "descripcion":"Correa tradicional, practica"
+        },
+        {
+            "name" : "Dispensador de comida",
+            "model" : "Portatil",
+            "img" : "../media/img/36.jpeg",
+            "price" : 390,
+            "id" : 36,
+            "descuento": 0,
+            "descripcion":"Dispensa la comida de su mascota automaticamente al momento"
+        },
+        {
+            "name" : "Dispensador de comida",
+            "model" : "Eléctrico",
+            "img" : "../media/img/37.jpg",
+            "price" : 790,
+            "id" : 37,
+            "descuento": 0,
+            "descripcion":"Permite que su mascota tenga su comida en porciones adecuadas"
+        },
+        {
+            "name" : "Dispensador de comida",
+            "model" :"Inteligente" ,
+            "img" : "../media/img/38.jpg",
+            "price" : 1020,
+            "id" : 38,
+            "descuento":0,
+            "descripcion":"Dispensador de comida programable"
+        },
+        {
+            "name" : "Bebedero",
+            "model" : "Portatil" ,
+            "img" : "../media/img/39.jpg",
+            "price" : 390,
+            "id" : 39,
+            "descuento": 0,
+            "descripcion": "Dispensa agua a su mascota de manera automatica"
+        },
+        {
+            "name" : "Bebedero" ,
+            "model" : "Eléctrico" ,
+            "img" : "../media/img/40.jpg",
+            "price" : 495,
+            "id" : 40,
+            "descuento":0,
+            "descripcion":"Permite que su mascota tenga agua en el momento que desee"
+        },
+        {
+            "name" : "Bebedero",
+            "model" :"Inteligente" ,
+            "img" : "../media/img/41.webp",
+            "price" : 1000,
+            "id" : 41,
+            "descuento": 0,
+            "descripcion": "Dispensa agua de manera inteligente, programable"
+        },
+        {
+            "name" : "Plato de comida",
+             "model" : "Clasico" ,
+             "img" : "../media/img/48.jpg",
+             "price" : 299,
+             "id" : 48,
+             "descuento": 0,
+             "descripcion":"Plato de comida de porciones adecuadas"
+        },
+        {
+            "name" : "Plato de comida",
+            "model" :"Personalizados" ,
+            "img" : "../media/img/49.jpg",
+            "price" : 350,
+            "id" : 49,
+            "descuento": 0,
+            "descripcion":"Plato de comida personalizado con que guste"    
+        },
+        {
+            "name" : "Comida",
+            "model" : "Nutricional",
+            "img" : "../media/img/42.png",
+            "price" : 789,
+            "id" : "42",
+            "descuento": 0,
+            "descripcion":"Le aporta a su mascota los nutrientes que necesita"
+        },
+        {
+            "name" : "Comida",
+            "model" : "Razas especiales" ,
+            "img" : "../media/img/43.jpg",
+            "price" : 800,
+            "id" : 43,
+            "descuento": 0,
+            "descripcion": "Comida para razas especiales, que necesitan de mejores cuidados"
+        },
+        {
+            "name" : "Comida",
+            "model" : "snacks" ,
+            "img" : "../media/img/44.jpg",
+            "price" : 439,
+            "id" : 44,
+            "descuento": 0,
+            "descripcion":"Snacks de ,mascotas en formas divertidas"
+        },
+        {
+            "name" : "Comida",
+            "model" : "Humeda" ,
+            "img" : "../media/img/45.jpg",
+            "price" : 286,
+            "id" : 45,
+            "descuento": "0",
+            "descripcion":"Comida humeda y rica para su mascota"
+        },
+        {
+            "name" : "Comida",
+            "model" : "Pure" ,
+            "img" : "../media/img/46.jpg",
+            "price" : 239,
+            "id" : 46,
+            "descuento": 0,
+            "descripcion":"Comida rica y deliciosa para su mascota con todos los aportes que su mascota necesita"
+        },
+        {
+            "name" : "Comida",
+            "model" : "Pate" ,
+            "img" : "../media/img/47.jpg",
+            "price" : 329,
+            "id" : 47,
+            "descuento": 0,
+            "descripcion":"Pate de pollo, de carte o de que usted guste para su mascota, rico, saboroso y delicioso"
+        }
 
-    
-]
+
+
+
+
+
+
+
+
+
+    ]
+}
+
+        
+
     
     
