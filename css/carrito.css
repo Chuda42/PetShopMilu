@@ -31,6 +31,7 @@
 
 .carrito-contenedor-total-btn{
     position: relative;
+    cursor: pointer;
     display:flex;
     justify-content: center;
     margin: 10px;
@@ -61,6 +62,8 @@
 
 .compra{
     display: flex;
+    min-height: 180px;
+    max-height: 180px;
     width: 97%;
     padding: 20px;
     margin: 20px;
@@ -71,6 +74,31 @@
     align-items: center;
     background-color:hsl(35, 92%, 51%, 0.9);
 }
+
+.compra i {
+    color: #f7cd92dc;
+    margin: 5px;
+    position: relative;
+    cursor:pointer;
+    max-height: 30px
+}
+
+.cant h4{
+    margin: 15px;
+}
+
+.cant h5{
+    border: 1px solid black;
+    border-radius:5px;
+    margin: 15px;
+    display:flex;
+    justify-content:center;
+}
+.cant h5:hover{
+    background-color: rgb(250, 224, 184);
+    cursor:pointer;
+}
+
 
 .nombre-modelo{
     display: flex;

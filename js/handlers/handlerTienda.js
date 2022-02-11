@@ -11,15 +11,6 @@ const $ = window.jQuery;
 
 /* Main */
 
-/* Stock */
-const producto1 = new producto("Comida", "FrostSenior", "../media/img/comida_frost.png", 900, 1, "Comida de perro de alta calidad")
-const producto2 = new producto("Collar", "DominalRosa", "../media/img/collarDominalRosa.png", 1555, 2, "collar anti pulgas de alta calidad, tamaño grande")
-
-
-
-
-
-/* Fin de stock */
 
 if(LOGIN.hayUserIn()){
     CART.initCarritoSTORAGE();
@@ -68,8 +59,9 @@ $(window).on("storage", ()=>{
     }
 })
 
+/* Se crea el stock */
 const stock1 = new stock()
-
+/* Se agregan los productos */
 stock1.agregarTarjetasHTML($("#store-stock"))
 console.log($(`#AgregarProducto-store-2`));
 console.log($(`#AgregarProducto-store-3`));

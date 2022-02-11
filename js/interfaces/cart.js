@@ -187,6 +187,11 @@ export const setCompraCarritoHTML = (nodo, compra) =>{
         })
     })
 
+    $(`#izq${id}`).on("mouseenter", (event)=>{$(event.target).animate({left: "-3px", fontSize: `30px`}, 50)})
+    $(`#izq${id}`).on("mouseleave", (event)=>{$(event.target).animate({left: "0px", fontSize: `25px`},50)})
+    $(`#der${id}`).on("mouseenter", (event)=>{$(event.target).animate({left: "3px", fontSize: `30px`}, 50)})
+    $(`#der${id}`).on("mouseleave", (event)=>{$(event.target).animate({left: "0px", fontSize: `25px`},50)})
+
     document.querySelector(`#remove${compra.id}`).addEventListener(`click`, (event)=>{
         removeItemCarrito(getIdCompra(event.target.id));
         /* Lo remueve del html */

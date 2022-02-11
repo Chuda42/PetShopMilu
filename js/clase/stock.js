@@ -3,7 +3,7 @@ import * as LOGIN from '../interfaces/login.js'
 import * as CART from  '../interfaces/cart.js' 
 
 
-
+/* Clase usada para consumir info de un json y generar html de la tienda */
 export class stock{
     agregarTarjeta(padre, producto){
         let html = 
