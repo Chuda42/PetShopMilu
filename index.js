@@ -1,7 +1,3 @@
-import {user} from './js/clase/user.js'
-import {producto} from './js/clase/producto.js'
-import {compra} from './js/clase/compra.js'
-
 //import {factura} from './js/clase/facturas.js'
 import * as LOGIN from './js/interfaces/login.js'
 import * as CART from  './js/interfaces/cart.js'
@@ -16,7 +12,7 @@ LOGIN.initUserIn();
 
 
 
-// Arreglo de la barra de navegación
+// Arreglo de la barra de navegación, según si hay o no usuario logueado
 if(LOGIN.hayUserIn()){
     CART.initCarritoSTORAGE();
 
@@ -41,7 +37,6 @@ if(LOGIN.hayUserIn()){
 
 // evento logout 
 document.querySelector("#logout-button").addEventListener("click", () => {
-    
     LOGIN.logout();
 })
 

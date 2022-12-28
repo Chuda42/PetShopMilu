@@ -2,7 +2,7 @@
 import {producto} from '../clase/producto.js'
 
 export const agregarTrjetaProducto = (producto, nodo) => {
-    const id = 5//producto.id;
+    const id = producto.id;
 
      let divProducto = document.createElement("div");
     divProducto.className = "producto-card";

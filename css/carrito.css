@@ -1,3 +1,10 @@
+.contenedor-compra-factura{
+    width: 100%;
+    display:flex;
+    justify-content: center;
+    background-color: hsl(35, 100%, 77%, 0.3);
+}
+
 .carrito-contenedor{
     display: flex;
     flex-direction: column;

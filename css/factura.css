@@ -1,0 +1,86 @@
+/* Factura expanida */
+.factura-expandida{
+    margin-top: 100px;
+    width: 1000px;
+    background-color: rgb(245, 219, 164);
+    grid-column: 1/5;
+    height: 1500px;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.factura-expandida-header{
+    display: flex;
+    justify-content: center;
+    height: 20%;
+    background-color:#ffa6009d;
+    overflow: hidden;
+    
+}
+.factura-expandida-header img{
+    height: 300px;
+}
+
+.factura-expandida-body{
+    width: 98%;
+    height: 78%;
+    margin-top: 1%;
+    margin-left: 1%;
+    border-radius: 9px;
+    border: 1px solid black;
+    display: grid;
+    padding-top: 2.5%;
+    grid-template-rows: 15% 5% 55% 20%;
+}
+
+.factura-expandida-info, .factura-expandida-productos, .factura-expandida-pago{
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.factura-expandida-info, .factura-expandida-pago{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2.5%;
+}
+
+.factura-expandida-body h3{
+    display:flex;
+    align-items: center;
+    padding-left: 2%;
+    font-size: 30px;
+}
+
+.factura-expandida-productos{
+    display: grid;
+    padding-left: 2.5%;
+    grid-template-columns:20% 35% 5% 35%;
+}
+
+.factura-expandida-productos ul{
+    list-style: none;
+}
+
+.factura-expandida-productos-id, .factura-expandida-productos-nombre, .factura-expandida-productos-cant{
+    border-right: 1px solid black;
+}
+
+.factura-expandida-pago h3{
+    font-size: 25px;
+}
+
+.graciasPorComprar{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+}
+
+.graciasPorComprar span{
+    color: blue;
+    cursor: pointer;
+}
+
+.graciasPorComprar span:hover{
+    border-bottom: 2px solid blue;
+}

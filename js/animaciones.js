@@ -1,4 +1,5 @@
 window.addEventListener("scroll",func =()=> {
     const nav = document.querySelector(".barraNav");
-    nav.classList.toggle("bajar", window.scrollY >300)
+    if (!!nav)
+        nav.classList.toggle("bajar", window.scrollY >300)
 })

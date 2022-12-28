@@ -63,11 +63,5 @@ $(window).on("storage", ()=>{
 const stock1 = new stock()
 /* Se agregan los productos */
 stock1.agregarTarjetasHTML($("#store-stock"))
-console.log($(`#AgregarProducto-store-2`));
-console.log($(`#AgregarProducto-store-3`));
-
-
-
-
 
 //STORE.agregarTrjetaProducto(producto1, document.querySelector(".store-stock"));

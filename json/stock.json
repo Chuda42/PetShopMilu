@@ -6,7 +6,7 @@
             "img"   : "../media/img/comida_frost.png",
             "price" : 900,
             "id"    : 1,
-            "descuento": 15,
+            "descuento": 0,
             "descripcion": "comida de alta calidad"
         },
         {
@@ -15,7 +15,7 @@
             "img"   : "../media/img/collarDominalRosa.png",
             "price" : 200,
             "id"    : 2,
-            "descuento": 15,
+            "descuento": 0,
             "descripcion": "Collar anti pulgas de alta calidad, tamaño grande"
         },
         {

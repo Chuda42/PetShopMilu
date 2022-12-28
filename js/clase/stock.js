@@ -16,7 +16,7 @@ export class stock{
                         <li><h4>Nombre:</h4>${producto.name}</li>
                         <li><h4>Modelo:</h4> ${producto.model}</li>
                         <li><h4>Descripcion:</h4>${producto.descripcion}</li>
-                        <li><h4>Price: </h4>${producto.price}</li>
+                        <li><h4>Price($): </h4>${producto.price}</li>
                         <li><h4>Descuento: </h4>${producto.descuento}</li>
                     </ul>
                 </div>
